@@ -5,43 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page d'accueil</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            text-align: center;
-            padding-top: 100px;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        p {
-            color: #666;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="Accueil.css">
 </head>
 
 <body>
 
+    <div class="navbar">
+        <a class="active" href="#">Accueil</a>
+        <a href="#">Services</a>
+        <a href="#">Produits</a>
+        <a href="#">À propos</a>
+        <a href="#">Contact</a>
+    </div>
     <div class="container">
         <h1>Bienvenue sur notre site</h1>
         <p><?php echo "Phrase aléatoire : " . getRandomPhrase(); ?></p>
