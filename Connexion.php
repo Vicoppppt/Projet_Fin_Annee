@@ -1,3 +1,47 @@
+<?php
+
+session_start();
+$bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'customer', 'customer');
+
+
+if (isset($_COOKIE['Email']) && isset($_COOKIE['Password'])) {
+
+  $recupUser = $bdd->prepare('SELECT * FROM users WHERE email = ? AND mdp = ?');
+  $recupUser->execute(array($_COOKIE['Email'], $_COOKIE['Password']));
+  if ($recupUser->rowCount() > 0) {
+    $Pseudo = $recupUser->fetch()['Pseudo'];
+    $_SESSION['email'] = $_COOKIE['Email'];
+    $_SESSION['mdp'] = $_COOKIE['Password'];
+    $_SESSION['Pseudo'] = $Pseudo;
+    $_SESSION['Avatar'] = $recupUser->fetch()['Avatar'];
+    $_SESSION['id'] = $recupUser->fetch()['id'];
+  }
+}
+
+if (isset($_POST['envoie'])) {
+  if (!empty($_POST['email']) and !empty($_POST['mdp'])) {
+    $email = htmlspecialchars($_POST['email']);
+    $mdp = sha1($_POST['mdp']);
+
+
+    $recupUser = $bdd->prepare('SELECT * FROM users WHERE email = ? AND mdp = ?');
+    $recupUser->execute(array($email, $mdp));
+    if ($recupUser->rowCount() > 0) {
+      $Pseudo = $recupUser->fetch()['Pseudo'];
+      $_SESSION['email'] = $email;
+      $_SESSION['mdp'] = $mdp;
+      $_SESSION['Pseudo'] = $Pseudo;
+      $_SESSION['Avatar'] = $recupUser->fetch()['Avatar'];
+      $_SESSION['id'] = $recupUser->fetch()['id'];
+
+
+      header('Location: ../Téléchargement/Téléchargement.php');
+    }
+  }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="FR">
 
