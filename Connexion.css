@@ -208,6 +208,10 @@ form .txt_field {
   animation: bounceAnimation2 8s ease-in-out infinite;
 }
 
+a {
+  text-decoration: none;
+}
+
 
 
 
