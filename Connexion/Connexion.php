@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'root', 'root');
+$bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'customer', 'customer');
 
 
 if (isset($_POST['Envoyer'])) {
@@ -16,7 +16,11 @@ if (isset($_POST['Envoyer'])) {
       $_SESSION['email'] = $Mail;
       $_SESSION['mdp'] = $Password;
 
-      header('Location: ../Téléchargement/Téléchargement.php');
+      header('Location: ../Accueil/Accueil.php');
+    } else {
+      echo '<script type="text/javascript">';
+      echo 'alert("Mot de passe incorrect!");';
+      echo '</script>';
     }
   }
 }
