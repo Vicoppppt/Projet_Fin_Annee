@@ -411,6 +411,50 @@
     html::-webkit-scrollbar {
       width: 0.00001vw;
     }
+
+    .NewsUnreal {
+      background: #101014;
+      position: relative;
+      width: auto;
+      height: 200vh;
+      border-radius: 5vh;
+      box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.7), 0 0 30px 20px rgba(255, 255, 255, 0.5), 0 0 40px 30px rgba(255, 255, 255, 0.3), 0 0 50px 40px rgba(255, 255, 255, 0.1);
+      /* Ombre créant l'effet de halo */
+      padding: 5%;
+      margin: 4%;
+      overflow: hidden;
+      color: black;
+    }
+
+    .NewsUnreal img {
+      aspect-ratio: 16/9;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 2vh;
+
+    }
+
+    .NewsUnrealContainerImages {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas:
+
+        "News1 News2 News3"
+        "TexteNews1 TexteNews2 TexteNews3";
+      column-gap: 2%;
+      margin-bottom: 10vh;
+    }
+
+    .NewsUnreal video {
+      width: 100%;
+      height: 100%;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+    }
   </style>
 
 </head>
@@ -503,6 +547,22 @@
         Rejoignez Epic Games lors de la GDC 2023 pour assister au State of Unreal et à des conférences instructives et jouer aux derniers jeux créés avec l'Unreal Engine sur nos stands.</p>
       </div>
     </div>
+
+    <div class="TitreUnrealNews" style="text-align: right;">
+      Fonctionnalités de l'Unreal Engine
+    </div>
+
+    <div class="Séparation">
+    </div>
+
+    <video autoplay muted loop>
+      <source src="Video/Epic.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+
+
+
   </div>
   <div class="TexteHautDiv">
     <p class="TexteHaut">
