@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
+html::-webkit-scrollbar {
+    width: 0.00001vw;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    background-color: #232628;
+    font-family: 'Staatliches', cursive;
+    height: 100vh;
+}
+
+.Nav4 {
+    text-decoration: underline;
+}
+
+/********** Toutes les grids *******/
+
+.Total {
+    display: grid;
+    height: 70vh;
+    grid-template-columns: 2fr 3fr 2fr;
+    grid-template-rows: 0.7fr 1.3fr;
+    grid-template-areas: "Communaute Jeu Maj"
+        "Communaute Credits Maj";
+}
+
+
+.GridPrincipale {
+    grid-area: Jeu;
+    position: relative;
+    background-color: #111314;
+    border-radius: 10px;
+    margin: 5%;
+    height: fit-content;
+
+}
+
+.Communaute {
+    grid-area: Communaute;
+    margin: 3%;
+    position: relative;
+    background-color: #292D2E;
+    border-radius: 10px;
+}
+
+.PatchNoteNumber {
+    color: white;
+    font-size: 7vh;
+}
+
+.PatchNoteDescription {
+    color: white;
+    margin-bottom: 5%;
+    font-size: 2.5vh;
+}
+
+.PatchNoteDate {
+    color: white;
+}
+
+.Photo {
+    height: 22vh;
+    overflow: hidden;
+}
+
+.Separationn {
+    font-size: 1vw;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    height: 5vh;
+    background-color: #36393B;
+    color: white;
+}
+
+.SeparationPetitPoint {
+    height: 0.0001vh;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+.Maj {
+    grid-area: Maj;
+    margin: 5%;
+    position: relative;
+    background-color: #111314;
+    border-radius: 10px;
+    overflow: auto;
+    padding: 5%;
+}
+
+.Maj::-webkit-scrollbar {
+    width: 0.00001vw;
+}
+
+.Gratuit {
+    position: absolute;
+    right: 10%;
+    padding: 2%;
+    top: -3%;
+    background-color: black;
+    border: 3px solid black;
+    border-radius: 5px;
+    color: white;
+}
+
+.TitreTele {
+    padding: 5%;
+    padding-bottom: 0%;
+    font-size: 7vh;
+    color: white;
+}
+
+.DescriptionTele {
+    padding-left: 5%;
+    padding-bottom: 2%;
+    font-size: 1.6vh;
+    color: white;
+}
+
+
+.Credits {
+    grid-area: Credits;
+    margin: 5%;
+    padding: 5%;
+    margin-top: 0%;
+    background-color: #111314;
+    border-radius: 15px;
+    overflow: auto;
+    max-height: 65vh;
+}
+
+
+.SéparationPetit {
+    height: 0.1vh;
+    background-color: gray;
+    border-radius: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.Credits::-webkit-scrollbar {
+    width: 0.00001vw;
+}
+
+.CreditsTitle {
+    font-family: 'Staatliches', cursive;
+    font-size: 7vh;
+    margin-bottom: 1vh;
+    color: white;
+}
+
+.CreditsInfos {
+    font-family: 'Staatliches', cursive;
+    font-size: 2vh;
+    margin-bottom: 1vh;
+    color: white;
+}
+
+
+.button {
+    position: relative;
+    font-family: 'Staatliches', cursive;
+    margin-left: 5%;
+    align-items: center;
+    width: fit-content;
+    display: flex;
+    padding: 1vh;
+    border: 0.2vw solid white;
+    border-radius: 15px;
+    background-color: transparent;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 1vh;
+    cursor: pointer;
+    margin-bottom: 5%;
+}
+
+.button img {
+    width: 1.7vh;
+    height: 1.7vh;
+    opacity: 0.7;
+}
+
+#Apple {
+    margin-left: 10px;
+}
+
+.button div {
+    margin-right: 10px;
+}
+
+.game-name {
+    font-family: 'Staatliches', cursive;
+    font-size: 2vh;
+}
+
+.transparent-info {
+    font-family: 'Staatliches', cursive;
+    opacity: 0.7;
+    font-size: 1.7vh;
+}
+
+/******** COMMENTAIRES **********/
+
+.comment-box {
+    grid-area: Communaute;
+    margin: 5%;
+    padding: 5%;
+    background-color: #111314;
+    border-radius: 15px;
+    overflow: auto;
+}
+
+.comment-box::-webkit-scrollbar {
+    width: 0.00001vw;
+}
+
+.comment-title {
+    font-family: 'Staatliches', cursive;
+    font-size: 7vh;
+    margin-bottom: 1vh;
+    color: white;
+    word-wrap: break-word;
+}
+
+.comment-input {
+    font-family: 'Staatliches', cursive;
+    width: 100%;
+    padding: 8px;
+    background-color: #111314;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.comment {
+    text-align: left;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    color: white;
+    align-items: center;
+    overflow: auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+}
+
+.comment::-webkit-scrollbar {
+    height: 1vw;
+    color: white;
+}
+
+.comment::-webkit-scrollbar-thumb {
+    height: 1vw;
+    color: gray;
+}
+
+.comment .user {
+    font-weight: bold;
+    color: #7C80FC;
+    margin-right: 10px;
+}
+
+.comment img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding-right: 3%;
+}
+
+@media screen and (max-width: 1300px) {
+    .Total {
+        display: grid;
+        height: 250vh;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.7fr 1.3fr repeat(2, 1fr);
+        grid-template-areas: "Jeu Jeu"
+            "Credits Credits"
+            "Communaute Communaute"
+            "Maj Maj";
+    }
+
+    .Separationn p {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .Total {
+        display: grid;
+        height: 250vh;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.5fr 1fr repeat(2, 1fr);
+        grid-template-areas: "Jeu Jeu"
+            "Credits Credits"
+            "Communaute Communaute"
+            "Maj Maj";
+    }
+}

@@ -13,7 +13,7 @@
     <div class="navbar">
         <a class="active" href="#">Accueil</a>
         <a href="#">Services</a>
-        <a href="#">Produits</a>
+        <a href="../Téléchargement/Téléchargement.php">Téléchargement</a>
         <a href="#">À propos</a>
         <a href="#">Contact</a>
     </div>
