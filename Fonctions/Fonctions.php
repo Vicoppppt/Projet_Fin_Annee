@@ -38,3 +38,36 @@ function afficherDateRelative($date)
     return date('d/m/Y', $timestamp_date_jeu);
   }
 }
+
+
+function BoutonComplet()
+{
+  echo '  
+
+      <style>
+      .button {
+        background-color:white;
+      }
+
+      .game-name {
+        opacity:0;
+      }
+
+      .transparent-info {
+        opacity:0;
+      }
+
+      .button img {
+        opacity: 0;
+    }
+      </style>
+    <div class="button" id="shake">
+      <div class="Cadenas"><img src="../Annexes/Cadenas.png" alt="Description de l\'image" id="Cadenas"></div>
+      <script src="Téléchargement.js"></script>
+      <div class="game-name">Téléchargement</div>
+      <div class="transparent-info">64-bits</div>
+      <div class="transparent-info">(132Mb)</div>
+      <img src="../Annexes/Windows.png" alt="Windows Logo">
+      <img src="../Annexes/Apple.png" id="Apple">
+    </div>';
+}

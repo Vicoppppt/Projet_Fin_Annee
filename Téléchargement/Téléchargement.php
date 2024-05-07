@@ -122,14 +122,16 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'cust
 
     <?php
 
-    $Mail = $_SESSION['Mail'];
+    if (isset($_SESSION['Mail']) || isset($_COOKIE['Mail'])) {
 
-    $Utilisateur = $bdd->prepare('SELECT Paye FROM clients WHERE Mail=?');
-    $Utilisateur->execute(array($Mail));
-    $Resultat = $Utilisateur->fetch();
+      $Mail = $_SESSION['Mail'];
 
-    if ($Resultat[0] == 1) {
-      echo '  
+      $Utilisateur = $bdd->prepare('SELECT Paye FROM clients WHERE Mail=?');
+      $Utilisateur->execute(array($Mail));
+      $Resultat = $Utilisateur->fetch();
+
+      if ($Resultat[0] == 1) {
+        echo '  
     <div class="button">
       <div class="game-name">Téléchargement</div>
       <div class="transparent-info">64-bits</div>
@@ -137,35 +139,11 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'cust
       <img src="../Annexes/Windows.png" alt="Windows Logo">
       <img src="../Annexes/Apple.png" id="Apple">
     </div>';
+      } else {
+        BoutonComplet();
+      }
     } else {
-      echo '  
-
-      <style>
-      .button {
-        background-color:white;
-      }
-
-      .game-name {
-        opacity:0;
-      }
-
-      .transparent-info {
-        opacity:0;
-      }
-
-      .button img {
-        opacity: 0;
-    }
-      </style>
-    <div class="button" id="shake">
-      <div class="Cadenas"><img src="../Annexes/Cadenas.png" alt="Description de l\'image" id="Cadenas"></div>
-      <script src="Téléchargement.js"></script>
-      <div class="game-name">Téléchargement</div>
-      <div class="transparent-info">64-bits</div>
-      <div class="transparent-info">(132Mb)</div>
-      <img src="../Annexes/Windows.png" alt="Windows Logo">
-      <img src="../Annexes/Apple.png" id="Apple">
-    </div>';
+      BoutonComplet();
     }
 
 
