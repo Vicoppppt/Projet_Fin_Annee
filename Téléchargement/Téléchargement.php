@@ -18,14 +18,93 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'cust
   <link rel="icon" href="../Barre Navigation et Footer/Pictures/Icon.png" type="image/x-icon">
   <title>Boop Adventure | Jeu de platforme en ligne</title>
   <link rel="stylesheet" href="Téléchargement.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
 </head>
 
-<style>
-  .PatchNoteDate {
-    color: #76b5c5;
-  }
-</style>
+<header class="header" id="header">
+  <nav class="nav container">
+    <a href="#" class="nav__logo">Logo</a>
 
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="../Accueil/Accueil.php" class="nav__link">Accueil</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#" class="nav__link">A propos</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="../Unreal Engine/Unreal.php" class="nav__link">Unreal</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#" class="nav__link">Téléchargement</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#" class="nav__link">Boutique</a>
+        </li>
+      </ul>
+
+      <div class="nav__close" id="nav-close">
+        <i class="ri-close-line"></i>
+      </div>
+    </div>
+
+    <div class="nav__actions">
+      <i class="ri-search-line nav__search" id="search-btn"></i>
+      <i class="ri-user-line nav__login" id="login-btn"></i>
+      <div class="nav__toggle" id="nav-toggle">
+        <i class="ri-menu-line"></i>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!--==================== SEARCH ====================-->
+<div class="search" id="search">
+  <form action="" class="search__form">
+    <i class="ri-search-line search__icon"></i>
+    <input type="search" placeholder="What are you looking for?" class="search__input">
+  </form>
+
+  <i class="ri-close-line search__close" id="search-close"></i>
+</div>
+
+<!--==================== LOGIN ====================-->
+<div class="login" id="login">
+  <form action="" class="login__form">
+    <h2 class="login__title">Log In</h2>
+
+    <div class="login__group">
+      <div>
+        <label for="email" class="login__label">Email</label>
+        <input type="email" placeholder="Write your email" id="email" class="login__input">
+      </div>
+
+      <div>
+        <label for="password" class="login__label">Password</label>
+        <input type="password" placeholder="Enter your password" id="password" class="login__input">
+      </div>
+    </div>
+
+    <div>
+      <p class="login__signup">
+        You do not have an account? <a href="#">Sign up</a>
+      </p>
+
+      <a href="#" class="login__forgot">
+        You forgot your password
+      </a>
+
+      <button type="submit" class="login__button">Log In</button>
+    </div>
+  </form>
+
+  <i class="ri-close-line login__close" id="login-close"></i>
+</div>
 
 <section class="Photo">
   <img src="../Annexes/Ville.png">
@@ -197,47 +276,6 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'cust
             padding: 0;
           }
         </style>
-        <?php
-
-        $Pouce = $bdd->prepare('SELECT Pouce FROM version_jeu');
-        $Pouce->execute();
-        $Resultat = $Pouce->fetch();
-
-        echo '<p>' . $Resultat['Pouce'] . '</p>'
-
-        ?>
-        <button type="submit" name="Like" class="submit-btn">
-
-          <?php
-
-          $Pouce = $bdd->prepare('SELECT Pouce FROM clients WHERE Mail=?');
-          $Pouce->execute([$_SESSION['Mail']]);
-          $Resultat = $Pouce->fetch();
-
-          if ($Resultat && $Resultat['Pouce'] == 1) {
-            echo '<img src="../Annexes/LikeMis.svg">';
-          } else {
-
-            echo '<img src="../Annexes/Like.svg">';
-
-            if (isset($_POST['Like'])) {
-              if (isset($_SESSION['Mail'])) {
-
-                $Pouce = $bdd->prepare('SELECT Pouce FROM version_jeu');
-                $Pouce->execute();
-                $Resultat = $Pouce->fetch();
-
-                $Incrément = $Resultat['Pouce'] + 1;
-
-                $Pouce = $bdd->prepare('UPDATE version_jeu SET Pouce = ?');
-                $Pouce->execute([$Incrément]);
-
-                $Pouce = $bdd->prepare('UPDATE clients SET Pouce = true WHERE Mail=?');
-                $Pouce->execute([$_SESSION['Mail']]);
-              }
-            }
-          } ?>
-        </button>
 
       </div>
     </form>
