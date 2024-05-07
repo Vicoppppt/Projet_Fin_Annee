@@ -1,7 +1,5 @@
 <?php
 
-require('../Fonctions/Nuages.php');
-
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'customer', 'customer');
 
@@ -35,14 +33,20 @@ if (isset($_POST['Envoyer'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boop Adventure</title>
-  <link rel="stylesheet" href="Connexion.css">
+  <link rel="stylesheet" href="Inscription.css">
   <script src="Connexion.js"></script>
 </head>
 
 <body>
 
   <?php
-  Nuages_Arriere_Plan();
+  for ($i = 1; $i <= 8; $i++) {
+    echo "
+    <div class=\"cloud$i\">
+      <img src=\"Nuages_IMG/Nuage.png\">
+    </div>
+  ";
+  }
   ?>
 
   <div class="center">
