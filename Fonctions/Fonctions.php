@@ -71,3 +71,24 @@ function BoutonComplet()
       <img src="../Annexes/Apple.png" id="Apple">
     </div>';
 }
+
+
+function AfficherCommentaires()
+{
+  $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'customer', 'customer');
+  $Commentaires = $bdd->prepare('SELECT id_com, Mail, Texte FROM commentaires ORDER BY id_com DESC');
+  $Commentaires->execute();
+  $Resultats = $Commentaires->fetchAll();
+
+  foreach ($Resultats as $row) {
+    $Pseudo = $bdd->prepare('SELECT Pseudo FROM clients WHERE Mail=?');
+    $Pseudo->execute(array($row['Mail']));
+    $Resultats = $Pseudo->fetchAll();
+    echo (
+      '<div class="comment">' .
+      "<p class='user'>"
+      . $Resultats[0]['Pseudo'] . ":" .
+      "</p>" .
+      "<p>" . " " . " " . $row['Texte'] . "</p>" . "</p>" . "</div>");
+  }
+}

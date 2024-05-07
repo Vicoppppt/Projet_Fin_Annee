@@ -16,7 +16,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'cust
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../Barre Navigation et Footer/Pictures/Icon.png" type="image/x-icon">
-  <title>Boop Adventure</title>
+  <title>Boop Adventure | Jeu de platforme en ligne</title>
   <link rel="stylesheet" href="Téléchargement.css">
 </head>
 
@@ -47,6 +47,24 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'cust
       <textarea class="comment-input" name="Commentaire" placeholder="Écrivez votre commentaire ici..."></textarea>
       <button class="comment-button" type="submit" name="send">Envoyer</button>
     </form>
+
+    <?php
+
+    if (isset($_POST['send'])) {
+      if ($_SESSION['Mail'] == NULL) {
+        header("Location:../Connexion/Connexion.php");
+      }
+
+      if (!empty($_POST['Commentaire'])) {
+        $commentaire = $_POST['Commentaire'];
+        $Insert = $bdd->prepare('INSERT INTO commentaires(Texte,Mail) VALUES(?,?)');
+        $Insert->execute(array($commentaire, $_SESSION['Mail']));
+      }
+    }
+
+    AfficherCommentaires();
+
+    ?>
   </div>
 
   <div class="Credits">
@@ -149,6 +167,80 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'cust
 
 
     ?>
+
+
+    <form method="post">
+      <div class="Avis">
+        <style>
+          .Avis img {
+            height: 3vh;
+            color: white;
+          }
+
+          .Avis {
+            position: absolute;
+            display: flex;
+            right: 10%;
+            bottom: 15%;
+            align-items: end;
+
+          }
+
+          .Avis p {
+            margin-right: 1vh;
+            color: white;
+          }
+
+          .submit-btn {
+            border: none;
+            background: none;
+            padding: 0;
+          }
+        </style>
+        <?php
+
+        $Pouce = $bdd->prepare('SELECT Pouce FROM version_jeu');
+        $Pouce->execute();
+        $Resultat = $Pouce->fetch();
+
+        echo '<p>' . $Resultat['Pouce'] . '</p>'
+
+        ?>
+        <button type="submit" name="Like" class="submit-btn">
+
+          <?php
+
+          $Pouce = $bdd->prepare('SELECT Pouce FROM clients WHERE Mail=?');
+          $Pouce->execute([$_SESSION['Mail']]);
+          $Resultat = $Pouce->fetch();
+
+          if ($Resultat && $Resultat['Pouce'] == 1) {
+            echo '<img src="../Annexes/LikeMis.svg">';
+          } else {
+
+            echo '<img src="../Annexes/Like.svg">';
+
+            if (isset($_POST['Like'])) {
+              if (isset($_SESSION['Mail'])) {
+
+                $Pouce = $bdd->prepare('SELECT Pouce FROM version_jeu');
+                $Pouce->execute();
+                $Resultat = $Pouce->fetch();
+
+                $Incrément = $Resultat['Pouce'] + 1;
+
+                $Pouce = $bdd->prepare('UPDATE version_jeu SET Pouce = ?');
+                $Pouce->execute([$Incrément]);
+
+                $Pouce = $bdd->prepare('UPDATE clients SET Pouce = true WHERE Mail=?');
+                $Pouce->execute([$_SESSION['Mail']]);
+              }
+            }
+          } ?>
+        </button>
+
+      </div>
+    </form>
 
 
 

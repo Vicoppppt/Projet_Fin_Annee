@@ -198,6 +198,26 @@ body {
     transition: background-color 0.3s ease;
 }
 
+.Avis img {
+    height: 3vh;
+    color: white;
+}
+
+.Avis {
+    position: absolute;
+    display: flex;
+    right: 10%;
+    bottom: 15%;
+    align-items: end;
+
+}
+
+.Avis p {
+    margin-right: 1vh;
+    color: white;
+}
+
+
 .button img {
     width: 1.7vh;
     height: 1.7vh;
