@@ -18,7 +18,7 @@ if (isset($_POST['Envoyer'])) {
       $_SESSION['Mail'] = $Mail;
       $_SESSION['Password'] = $Password;
 
-      header('Location: ../Accueil/Accueil.php');
+      header('Location: ../Accueil/Accueil.php');;
     } else {
     }
   }
