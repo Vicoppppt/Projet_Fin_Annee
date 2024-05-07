@@ -1,27 +1,9 @@
 <?php
 
+require('../Fonctions/Nuages.php');
+
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'customer', 'customer');
-
-
-if (isset($_POST['Envoyer'])) {
-  if (!empty($_POST['Mail']) and !empty($_POST['Password'])) {
-    $Mail = htmlspecialchars($_POST['Mail']);
-    $Password = ($_POST['Password']);
-
-
-    $Utilisateur = $bdd->prepare('SELECT * FROM clients WHERE Mail = ? AND Passwords = ?');
-    $Utilisateur->execute(array($Mail, $Password));
-    if ($Utilisateur->rowCount() > 0) {
-      $_SESSION['email'] = $Mail;
-      $_SESSION['mdp'] = $Password;
-
-      header('Location: ../Accueil/Accueil.php');
-    } else {
-    }
-  }
-}
-
 
 ?>
 
@@ -34,23 +16,16 @@ if (isset($_POST['Envoyer'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boop Adventure</title>
   <link rel="stylesheet" href="Inscription.css">
-  <script src="Connexion.js"></script>
 </head>
 
 <body>
 
   <?php
-  for ($i = 1; $i <= 8; $i++) {
-    echo "
-    <div class=\"cloud$i\">
-      <img src=\"Nuages_IMG/Nuage.png\">
-    </div>
-  ";
-  }
+  Nuages_Arriere_Plan();
   ?>
 
   <div class="center">
-    <h1>Connexion</h1>
+    <h1>Inscription</h1>
     <form method="POST">
       <div class="txt_field">
         <input type="email" name="Mail" required autocomplete="on">
@@ -62,13 +37,15 @@ if (isset($_POST['Envoyer'])) {
         <span></span>
         <label>Mot de passe</label>
       </div>
-      <a href="../Mot de Passe Oublié/forgot_password.php">
-        <div class="pass">Mot de passe oublié?</div>
-      </a>
-      <input type="submit" class='submit' name='Envoyer' value="Connexion">
-      <div class="signup_link">
-        T'as pas ton équipement? <a href="Register.php">Incris toi!</a>
+      <div class="txt_field">
+        <input type="pseudo" name="Pseudo" required autocomplete="off">
+        <span></span>
+        <label>Pseudo</label>
       </div>
+      <a href="../Connexion/Connexion.php">
+        <div class="pass">Déjà inscrit ? Connexion</div>
+      </a>
+      <input type="submit" class='submit' name='Envoyer' value="Inscription">
     </form>
   </div>
 

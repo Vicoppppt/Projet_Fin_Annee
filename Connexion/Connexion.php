@@ -63,7 +63,7 @@ if (isset($_POST['Envoyer'])) {
       </a>
       <input type="submit" class='submit' name='Envoyer' value="Connexion">
       <div class="signup_link">
-        T'as pas ton équipement? <a href="Register.php">Incris toi!</a>
+        T'as pas ton équipement? <a href="../Inscription/Inscription.php">Incris toi!</a>
       </div>
     </form>
   </div>
