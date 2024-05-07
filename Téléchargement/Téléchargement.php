@@ -1,5 +1,7 @@
 <?php
 
+require('../Fonctions/Fonctions.php');
+
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'customer', 'customer');
 
@@ -40,6 +42,11 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'cust
 
   <div class="comment-box" id="zone-actualisee">
     <div class="comment-title">Commentaires</div>
+
+    <form method="post">
+      <textarea class="comment-input" name="Commentaire" placeholder="Écrivez votre commentaire ici..."></textarea>
+      <button class="comment-button" type="submit" name="send">Envoyer</button>
+    </form>
   </div>
 
   <div class="Credits">
@@ -76,34 +83,11 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'cust
       $Texte = $row['Texte'];
       $Date = $row['Date'];
       $NumeroPatch = $row['id_patch'];
-
-      $timestamp_date = strtotime($Date);
-
-      // Récupérer la date actuelle
-      $date_actuelle = time();
-
-      // Comparer la date du jeu avec la date actuelle
-      if (date('Y', $timestamp_date) == date('Y', $date_actuelle)) {
-        if (date('n', $timestamp_date) == date('n', $date_actuelle)) {
-          if (date('W', $timestamp_date) == date('W', $date_actuelle)) {
-            $date_affichee = "cette semaine";
-          } else {
-            $date_affichee = "ce mois-ci";
-          }
-        } else {
-          $date_affichee = "cette année";
-        }
-      } else {
-        // Si la date ne correspond pas à cette année
-        $date_affichee = date('d/m/Y', $timestamp_date);
-      }
-
       echo '
       <p class="PatchNoteNumber">Patch #' . $NumeroPatch . '</p>
-      <p class="PatchNoteDate">' . $date_affichee . '</p>
+      <p class="PatchNoteDate">' . afficherDateRelative($Date) . '</p>
       <div class="SeparationPetitPoint"></div>
-      <p class="PatchNoteDescription">' . $Texte . '
-      ';
+      <p class="PatchNoteDescription">' . $Texte . '</p>';
     }
 
     ?>
@@ -132,38 +116,67 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'cust
     $Version_jeu = $PremiereLigne['Version'];
     $Date_Jeu = $PremiereLigne['Date'];
 
-    $timestamp_date_jeu = strtotime($Date_Jeu);
-
-    // Récupérer la date actuelle
-    $date_actuelle = time();
-
-    // Comparer la date du jeu avec la date actuelle
-    if (date('Y', $timestamp_date_jeu) == date('Y', $date_actuelle)) {
-      if (date('n', $timestamp_date_jeu) == date('n', $date_actuelle)) {
-        if (date('W', $timestamp_date_jeu) == date('W', $date_actuelle)) {
-          $date_affichee = "cette semaine";
-        } else {
-          $date_affichee = "ce mois-ci";
-        }
-      } else {
-        $date_affichee = "cette année";
-      }
-    } else {
-      // Si la date ne correspond pas à cette année
-      $date_affichee = date('d/m/Y', $timestamp_date_jeu);
-    }
-
-    echo '<p class="DescriptionTele">Version ' . $Version_jeu . '●' . $date_affichee . ' </p>';
+    echo '<p class="DescriptionTele">Version ' . $Version_jeu . '●' . afficherDateRelative($Date_Jeu) . ' </p>';
 
     ?>
 
+    <?php
+
+    $Mail = $_SESSION['Mail'];
+
+    $Utilisateur = $bdd->prepare('SELECT Paye FROM clients WHERE Mail=?');
+    $Utilisateur->execute(array($Mail));
+    $Resultat = $Utilisateur->fetch();
+
+    if ($Resultat[0] == 1) {
+      echo '  
     <div class="button">
       <div class="game-name">Téléchargement</div>
       <div class="transparent-info">64-bits</div>
       <div class="transparent-info">(132Mb)</div>
       <img src="../Annexes/Windows.png" alt="Windows Logo">
       <img src="../Annexes/Apple.png" id="Apple">
-    </div>
+    </div>';
+    } else {
+      echo '  
+
+      <style>
+      .button {
+        background-color:white;
+      }
+
+      .game-name {
+        opacity:0;
+      }
+
+      .transparent-info {
+        opacity:0;
+      }
+
+      .button img {
+        opacity: 0;
+    }
+      </style>
+    <div class="button" id="shake">
+      <div class="Cadenas"><img src="../Annexes/Cadenas.png" alt="Description de l\'image" id="Cadenas"></div>
+      <script src="Téléchargement.js"></script>
+      <div class="game-name">Téléchargement</div>
+      <div class="transparent-info">64-bits</div>
+      <div class="transparent-info">(132Mb)</div>
+      <img src="../Annexes/Windows.png" alt="Windows Logo">
+      <img src="../Annexes/Apple.png" id="Apple">
+    </div>';
+    }
+
+
+
+    ?>
+
+
+
+
+
+
   </div>
 </section>
 </body>

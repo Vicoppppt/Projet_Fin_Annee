@@ -186,10 +186,64 @@ body {
     margin-bottom: 5%;
 }
 
+.comment-button {
+    font-family: 'Staatliches', cursive;
+    padding: 8px 20px;
+    width: 100%;
+    margin-bottom: 2vh;
+    background-color: #111314;
+    border: 2px solid #808080;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
 .button img {
     width: 1.7vh;
     height: 1.7vh;
     opacity: 0.7;
+}
+
+.shake {
+    animation: shakeAnimation 0.2s ease-in-out;
+}
+
+@keyframes shakeAnimation {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+
+.Cadenas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#Cadenas {
+    width: 5.5vh;
+    height: 5.5vh;
+    opacity: 1;
+    z-index: 100;
 }
 
 #Apple {

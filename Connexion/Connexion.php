@@ -1,6 +1,6 @@
 <?php
 
-require('../Fonctions/Nuages.php');
+require('../Fonctions/Fonctions.php');
 
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'customer', 'customer');
@@ -15,8 +15,8 @@ if (isset($_POST['Envoyer'])) {
     $Utilisateur = $bdd->prepare('SELECT * FROM clients WHERE Mail = ? AND Passwords = ?');
     $Utilisateur->execute(array($Mail, $Password));
     if ($Utilisateur->rowCount() > 0) {
-      $_SESSION['email'] = $Mail;
-      $_SESSION['mdp'] = $Password;
+      $_SESSION['Mail'] = $Mail;
+      $_SESSION['Password'] = $Password;
 
       header('Location: ../Accueil/Accueil.php');
     } else {
