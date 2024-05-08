@@ -14,399 +14,10 @@
   <link rel="icon" href="../Barre Navigation et Footer/Pictures/Icon.png" type="image/x-icon">
   <title>Boop Adventure</title>
   <link rel="stylesheet" href="Unreal.css">
+  <link rel="stylesheet" href="../Navigation_Footer/Navigation.css">
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-    @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap");
-
-    /*=============== VARIABLES CSS ===============*/
-    :root {
-      --header-height: 3.5rem;
-
-      /*========== Colors ==========*/
-      /*Color mode HSL(hue, saturation, lightness)*/
-      --first-color: hsl(230, 75%, 56%);
-      --title-color: white;
-      --text-color: hsl(230, 12%, 40%);
-      --body-color: hsl(230, 100%, 98%);
-      --container-color: hsl(230, 100%, 97%);
-      --border-color: hsl(230, 25%, 80%);
-
-      /*========== Font and typography ==========*/
-      /*.5rem = 8px | 1rem = 16px ...*/
-      --body-font: "Syne", sans-serif;
-      --h2-font-size: 1.25rem;
-      --normal-font-size: .938rem;
-
-      /*========== Font weight ==========*/
-      --font-regular: 400;
-      --font-medium: 500;
-      --font-semi-bold: 600;
-
-      /*========== z index ==========*/
-      --z-fixed: 100;
-      --z-modal: 1000;
-    }
-
-    /*========== Responsive typography ==========*/
-    @media screen and (min-width: 1023px) {
-      :root {
-        --h2-font-size: 1.5rem;
-        --normal-font-size: 1rem;
-      }
-    }
-
-    /*=============== BASE ===============*/
-    * {
-      box-sizing: border-box;
-      padding: 0;
-      margin: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    header,
-    input,
-    button {
-      font-family: var(--body-font);
-      font-size: var(--normal-font-size);
-    }
-
-    input,
-    button {
-      border: none;
-      outline: none;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-
-    /*=============== REUSABLE CSS CLASSES ===============*/
-    .container {
-      max-width: 1120px;
-      margin-inline: 1.5rem;
-    }
-
-    .main {
-      position: relative;
-      height: 100vh;
-    }
-
-    .main__bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      z-index: -1;
-    }
-
-    .search,
-    .login {
-      position: relative;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      z-index: var(--z-modal);
-      background-color: hsla(230, 75%, 15%, .1);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      /* For safari */
-      padding: 8rem 1.5rem 0;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .4s;
-    }
-
-    .search__close,
-    .login__close {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      font-size: 1.5rem;
-      color: var(--title-color);
-      cursor: pointer;
-    }
-
-    /*=============== HEADER & NAV ===============*/
-    .header {
-      position: relative;
-      top: 0;
-      left: 0;
-      width: 100%;
-      box-shadow: 0 2px 16px hsla(230, 75%, 32%, .15);
-      z-index: var(--z-fixed);
-    }
-
-    .nav {
-      height: var(--header-height);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav__logo {
-      color: var(--title-color);
-      font-weight: var(--font-semi-bold);
-      transition: color .4s;
-    }
-
-    .nav__actions {
-      display: flex;
-      align-items: center;
-      column-gap: 1rem;
-    }
-
-    .nav__search,
-    .nav__login,
-    .nav__toggle,
-    .nav__close {
-      font-size: 1.25rem;
-      color: var(--title-color);
-      cursor: pointer;
-      transition: color .4s;
-    }
-
-    :is(.nav__logo, .nav__search, .nav__login, .nav__toggle, .nav__link):hover {
-      color: var(--first-color);
-    }
-
-    /* Navigation for mobile devices */
-    @media screen and (max-width: 1023px) {
-      .nav__menu {
-        position: fixed;
-        top: -100%;
-        left: 0;
-        background-color: var(--body-color);
-        box-shadow: 0 8px 16px hsla(230, 75%, 32%, .15);
-        width: 100%;
-        padding-block: 4.5rem 4rem;
-        transition: top .4s;
-      }
-    }
-
-    .nav__list {
-      display: flex;
-      flex-direction: column;
-      row-gap: 2.5rem;
-      text-align: center;
-    }
-
-    .nav__link {
-      color: var(--title-color);
-      font-weight: var(--font-semi-bold);
-      transition: color .4s;
-    }
-
-    .nav__close {
-      position: absolute;
-      top: 1.15rem;
-      right: 1.5rem;
-    }
-
-    /* Show menu */
-    .show-menu {
-      top: 0;
-    }
-
-    /*=============== SEARCH ===============*/
-    .search__form {
-      display: flex;
-      align-items: center;
-      column-gap: .5rem;
-      background-color: var(--container-color);
-      box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);
-      padding-inline: 1rem;
-      border-radius: .5rem;
-      transform: translateY(-1rem);
-      transition: transform .4s;
-    }
-
-    .search__icon {
-      font-size: 1.25rem;
-      color: var(--title-color);
-    }
-
-    .search__input {
-      width: 100%;
-      padding-block: 1rem;
-      background-color: var(--container-color);
-      color: var(--text-color);
-    }
-
-    .search__input::placeholder {
-      color: var(--text-color);
-    }
-
-    /* Show search */
-    .show-search {
-      opacity: 1;
-      pointer-events: initial;
-    }
-
-    .show-search .search__form {
-      transform: translateY(0);
-    }
-
-    /*=============== LOGIN ===============*/
-    .login__form,
-    .login__group {
-      display: grid;
-    }
-
-    .login__form {
-      background-color: var(--container-color);
-      padding: 2rem 1.5rem 2.5rem;
-      box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);
-      border-radius: 1rem;
-      row-gap: 1.25rem;
-      text-align: center;
-      transform: translateY(-1rem);
-      transition: transform .4s;
-    }
-
-    .login__title {
-      font-size: var(--h2-font-size);
-      color: var(--title-color);
-    }
-
-    .login__group {
-      row-gap: 1rem;
-    }
-
-    .login__label {
-      display: block;
-      text-align: initial;
-      color: var(--title-color);
-      font-weight: var(--font-medium);
-      margin-bottom: .25rem;
-    }
-
-    .login__input {
-      width: 100%;
-      background-color: var(--container-color);
-      border: 2px solid var(--border-color);
-      padding: 1rem;
-      border-radius: .5rem;
-      color: var(--text-color);
-    }
-
-    .login__input::placeholder {
-      color: var(--text-color);
-    }
-
-    .login__signup {
-      margin-bottom: .5rem;
-    }
-
-    .login__signup a {
-      color: var(--first-color);
-    }
-
-    .login__forgot {
-      display: inline-block;
-      color: var(--first-color);
-      margin-bottom: 1.25rem;
-    }
-
-    .login__button {
-      display: inline-block;
-      background-color: var(--first-color);
-      width: 100%;
-      color: #fff;
-      font-weight: var(--font-semi-bold);
-      padding: 1rem;
-      border-radius: .5rem;
-      cursor: pointer;
-      transition: box-shadow .4s;
-    }
-
-    .login__button:hover {
-      box-shadow: 0 4px 24px hsla(230, 75%, 40%, .4);
-    }
-
-    /* Show login */
-    .show-login {
-      opacity: 1;
-      pointer-events: initial;
-    }
-
-    .show-login .login__form {
-      transform: translateY(0);
-    }
-
-    /*=============== BREAKPOINTS ===============*/
-    /* For medium devices */
-    @media screen and (min-width: 576px) {
-
-      .search,
-      .login {
-        padding-top: 10rem;
-      }
-
-      .search__form {
-        max-width: 450px;
-        margin-inline: auto;
-      }
-
-      .search__close,
-      .login__close {
-        width: max-content;
-        top: 5rem;
-        left: 0;
-        right: 0;
-        margin-inline: auto;
-        font-size: 2rem;
-      }
-
-      .login__form {
-        max-width: 400px;
-        margin-inline: auto;
-      }
-    }
-
-    /* For large devices */
-    @media screen and (min-width: 1023px) {
-      .nav {
-        height: calc(var(--header-height) + 2rem);
-        column-gap: 3rem;
-      }
-
-      .nav__close,
-      .nav__toggle {
-        display: none;
-      }
-
-      .nav__menu {
-        margin-left: auto;
-      }
-
-      .nav__list {
-        flex-direction: row;
-        column-gap: 3rem;
-      }
-
-      .login__form {
-        padding: 3rem 2rem 3.5rem;
-      }
-    }
-
-    @media screen and (min-width: 1150px) {
-      .container {
-        margin-inline: auto;
-      }
-    }
 
     html::-webkit-scrollbar {
       width: 0.00001vw;
@@ -454,7 +65,7 @@
         "News1 News2 News3"
         "TexteNews1 TexteNews2 TexteNews3";
       column-gap: 2%;
-      margin-bottom: 10vh;
+      margin-bottom: 5vh;
     }
 
     .NewsUnreal video {
@@ -500,6 +111,7 @@
     .Fonctionnalités {
       position: relative;
       display: flex;
+      margin-bottom: 10vh;
     }
 
     .Fonctionnalités p {
@@ -511,7 +123,7 @@
       font-size: 3vw;
       word-break: break-word;
       margin-left: 2%;
-      margin-top: 0;
+      margin-top: 0.5%;
     }
 
     .Fonctionnalités img {
@@ -547,6 +159,157 @@
       font-size: 1.2vw;
       text-align: justify;
       line-height: 1.3;
+    }
+
+    .InformationsInstalle {
+      display: flex;
+      gap: 2vw;
+      margin-bottom: 2vw;
+    }
+
+    .InformationsInstalle p {
+      margin-bottom: 3vh;
+      font-size: 1vw;
+      color: #98989C;
+    }
+
+
+    .InformationsInstalle h2 {
+      margin-top: 3%;
+      margin-bottom: 3%;
+      font-weight: normal;
+      font-size: 1.5vw;
+    }
+
+    .InformationsInstalle .bouton {
+      display: inline-block;
+      background-color: #26BBFF;
+      /* Couleur bleue */
+      color: #3b3b3f;
+      /* Couleur du texte blanc */
+      padding: 10px 20px;
+      /* Espacement intérieur */
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      /* Coins arrondis */
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+      margin-top: 5.4%;
+    }
+
+    .InformationsInstalle .bouton2 {
+      display: flex;
+      background-color: #404044;
+      /* Couleur bleue */
+      color: white;
+      /* Couleur du texte blanc */
+      padding: 10px 20px;
+      /* Espacement intérieur */
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      /* Coins arrondis */
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+      align-items: center;
+    }
+
+    .InformationsInstalle .bouton:hover {
+      background-color: #61CDFF;
+      /* Changement de couleur au survol */
+    }
+
+    .InformationsInstalle .bouton2:hover {
+      background-color: #606064;
+      /* Changement de couleur au survol */
+    }
+
+    .InformationsInstalle h1 {
+      font-weight: normal;
+      font-size: 1vw;
+    }
+
+    .FortniteInstaller {
+      position: relative;
+      background-color: transparent;
+      /* Fond transparent */
+      color: #333;
+      /* Couleur du texte */
+      border: 2px solid #999;
+      /* Bordure grise */
+      /* Espacement intérieur */
+      box-sizing: border-box;
+      /* Inclut le padding dans la taille définie */
+      border-radius: 0.5vw;
+      /* Coins arrondis */
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .FortniteInstaller h2 {
+      padding: 1.5vw;
+      font-weight: normal;
+      font-size: 1.5vw;
+      color: white;
+      padding-bottom: 0.5vw;
+    }
+
+    .FortniteInstaller h3 {
+      padding: 1.5vw;
+      padding-top: 0;
+      font-weight: normal;
+      font-size: 1vw;
+      color: #3b3b3f;
+    }
+
+    .FortniteInstaller .bouton {
+      position: absolute;
+      background-color: #404044;
+      top: 35%;
+      right: 3%;
+      /* Couleur bleue */
+      color: white;
+      /* Couleur du texte blanc */
+      padding: 10px 20px;
+      /* Espacement intérieur */
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      /* Coins arrondis */
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .FortniteInstaller .bouton:hover {
+      background-color: #606064;
+      /* Changement de couleur au survol */
+    }
+
+    .InformationsInstalle .Installation {
+      border-radius: 20px;
+      flex: 1;
+      width: 32%;
+      /* Prend 33% de la largeur de son parent */
+      background-color: #202024;
+      /* Fond gris */
+      padding: 2vw 2vw;
+      box-sizing: border-box;
+      /* Inclut le padding dans la largeur définie */
+      display: inline-block;
+      /* Pour permettre le redimensionnement automatique en hauteur */
+    }
+
+    .bouton2 img {
+      width: 1vw;
+      margin-right: 0.5vw;
+      aspect-ratio: auto;
+      object-fit: contain;
+      border-radius: 0;
     }
   </style>
 
@@ -596,7 +359,7 @@
 <body>
 
   <video autoplay muted loop>
-    <source src="Video/Epic.mp4" type="video/mp4">
+    <source src="Video/Unreal.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
@@ -669,6 +432,42 @@
       </div>
 
 
+    </div>
+
+    <div class="TitreUnrealNews">
+      Comment installer l'Unreal Engine ?
+    </div>
+
+    <div class="Séparation">
+    </div>
+
+    <div class="InformationsInstalle">
+      <div class="Installation">
+        <h1>Etape 1</h1>
+        <h2>Téléchargez le lanceur</h2>
+        <p>Avant d'installer et d'exécuter l'Unreal Editor, vous devez télécharger et installer le lanceur Epic Games.</p>
+        <button class="bouton">Télécharger le lanceur</button>
+      </div>
+      <div class="Installation">
+        <h1>Etape 2</h1>
+        <h2>Installez le lanceur Epic Games
+
+        </h2>
+        <p>Une fois le lanceur téléchargé et installé, ouvrez-le et créez un compte ou connectez-vous à votre compte Epic Games.</p>
+      </div>
+      <div class="Installation">
+        <h1>Etape 3</h1>
+        <h2>Installez l'Unreal Engine</h2>
+        <p>Connectez-vous, puis accédez à l'onglet Unreal Engine et cliquez sur le bouton Installer pour télécharger la version la plus récente.</p>
+        <button class="bouton2">
+          <img src="../Annexes/Play.svg">Regarder la vidéo d'installation</button>
+      </div>
+
+    </div>
+    <div class="FortniteInstaller">
+      <h2>Vous souhaitez installer l'Unreal Editor pour Fortnite ?</h2>
+      <h3>Mettez en place tout le nécessaire pour utiliser l'Unreal Editor pour Fortnite depuis le lanceur Epic Games.</h3>
+      <button class="bouton">Télécharger l'UEFN</button>
     </div>
 
 
