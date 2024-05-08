@@ -12,7 +12,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../Barre Navigation et Footer/Pictures/Icon.png" type="image/x-icon">
-  <title>Boop Adventure</title>
+  <title>Boop Adventure | Unreal Engine</title>
   <link rel="stylesheet" href="Unreal.css">
   <link rel="stylesheet" href="../Navigation_Footer/Navigation.css">
 
@@ -21,6 +21,11 @@
 
     html::-webkit-scrollbar {
       width: 0.00001vw;
+    }
+
+    .TexteHaut {
+      opacity: 0.8;
+      color: white;
     }
 
     .NewsUnreal {
@@ -65,7 +70,7 @@
         "News1 News2 News3"
         "TexteNews1 TexteNews2 TexteNews3";
       column-gap: 2%;
-      margin-bottom: 5vh;
+      margin-bottom: 0;
     }
 
     .NewsUnreal video {
@@ -73,7 +78,7 @@
       height: 130%;
       position: relative;
       z-index: 2;
-      border-radius: 3%;
+      border-radius: 25px;
       object-fit: cover;
       box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
     }
