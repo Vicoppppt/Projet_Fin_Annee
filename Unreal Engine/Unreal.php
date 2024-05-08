@@ -416,14 +416,15 @@
       background: #101014;
       position: relative;
       width: auto;
-      height: 200vh;
-      border-radius: 5vh;
-      box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.7), 0 0 30px 20px rgba(255, 255, 255, 0.5), 0 0 40px 30px rgba(255, 255, 255, 0.3), 0 0 50px 40px rgba(255, 255, 255, 0.1);
+      height: auto;
+      border-radius: 2vh;
+      box-shadow: 0 0 50px #101014;
       /* Ombre créant l'effet de halo */
       padding: 5%;
-      margin: 4%;
+      margin: 4% 2%;
       overflow: hidden;
-      color: black;
+      color: white;
+
     }
 
     .NewsUnreal img {
@@ -432,6 +433,16 @@
       object-fit: cover;
       border-radius: 2vh;
 
+    }
+
+    .TitreTexteNews {
+      padding-bottom: 2%;
+      padding-top: 1%;
+      font-size: 2vw;
+      font-weight: normal;
+      text-decoration: underline;
+      transition: 0.4s;
+      line-height: 1.5;
     }
 
     .NewsUnrealContainerImages {
@@ -447,13 +458,95 @@
     }
 
     .NewsUnreal video {
-      width: 100%;
-      height: 100%;
+      width: 60%;
+      height: 130%;
+      position: relative;
+      z-index: 2;
+      border-radius: 3%;
+      object-fit: cover;
+      box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
     }
 
     video {
       width: 100%;
       height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    .News3 img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+    }
+
+    .News1 img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+    }
+
+    .News2 img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+    }
+
+    .Séparation {
+      border: white solid 0.1vw;
+      margin-bottom: 3%;
+    }
+
+    .Fonctionnalités {
+      position: relative;
+      display: flex;
+    }
+
+    .Fonctionnalités p {
+      position: relative;
+    }
+
+    .Fonctionnalités .Titre {
+      position: relative;
+      font-size: 3vw;
+      word-break: break-word;
+      margin-left: 2%;
+      margin-top: 0;
+    }
+
+    .Fonctionnalités img {
+      position: relative;
+      width: 20vw;
+      aspect-ratio: auto;
+      object-fit: contain;
+      z-index: 200;
+    }
+
+    #Texte {
+      position: relative;
+      font-size: 1.2vw;
+      word-break: break-word;
+      margin-top: 2%;
+      line-height: 1.5;
+      text-align: justify;
+    }
+
+    .TexteNews1 {
+      font-size: 1.2vw;
+      text-align: justify;
+      line-height: 1.3;
+    }
+
+    .TexteNews2 {
+      font-size: 1.2vw;
+      text-align: justify;
+      line-height: 1.3;
+    }
+
+    .TexteNews3 {
+      font-size: 1.2vw;
+      text-align: justify;
+      line-height: 1.3;
     }
   </style>
 
@@ -503,7 +596,7 @@
 <body>
 
   <video autoplay muted loop>
-    <source src="Video/UnrealEdit.mp4" type="video/mp4">
+    <source src="Video/Epic.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
@@ -515,6 +608,8 @@
       Avec des conditions justes pour tous.<br>
       Créons ensemble des choses incroyables.<br>
   </div>
+
+
   <div class="NewsUnreal">
 
     <div class="TitreUnrealNews">
@@ -530,21 +625,21 @@
       </div>
       <div class="TexteNews1">
         <p class="TitreTexteNews">Unreal Engine 5.3 est disponible !</p>
-        Cette nouvelle version contient de nombreuses améliorations très variées ainsi que de nouvelles fonctionnalités expérimentales qui viennent encore élargir le potentiel de l'UE5 pour les développeurs de jeu et les créateurs dans tous les secteurs. Découvrez ce qui change.</p>
+        Cette version regorge de nouvelles fonctionnalités et d’améliorations qui profiteront aux développeurs et aux créateurs de jeux de tous les secteurs, y compris les outils que nous avons utilisés en interne pour créer et livrer Fortnite Chapter 5, Rocket Racing et Fortnite Festival</p>
       </div>
       <div class="News2">
         <img src="Pictures/Fortnite.png">
       </div>
       <div class="TexteNews2">
-        <p class="TitreTexteNews">Unreal Editor pour Fortnite disponible en Bêta publique !</p>
+        <p class="TitreTexteNews">Unreal Editor pour Fortnite !</p>
         L'Unreal Editor pour Fortnite (UEFN) allie la puissance de l'Unreal Engine à l'ampleur de Fortnite. Grâce à des outils de développement, créez des jeux et des expériences encore inédites dans Fortnite et publiez-les pour en faire profiter des millions de joueurs.</p>
       </div>
       <div class="News3">
         <img src="Pictures/StateUnreal.png">
       </div>
       <div class="TexteNews3">
-        <p class="TitreTexteNews">GDC 2023</p>
-        Rejoignez Epic Games lors de la GDC 2023 pour assister au State of Unreal et à des conférences instructives et jouer aux derniers jeux créés avec l'Unreal Engine sur nos stands.</p>
+        <p class="TitreTexteNews">GDC 2024</p>
+        (Re)découvrez les annonces d'Epic Games à la GDC 2024 pour en savoir plus sur l'UE 5.4, les LEGO® Elements proposés aux créateurs Fortnite, le lancement sur mobile de l'Epic Games Store et bien plus encore.</p>
       </div>
     </div>
 
@@ -555,10 +650,26 @@
     <div class="Séparation">
     </div>
 
-    <video autoplay muted loop>
-      <source src="Video/Epic.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+
+    <div class="Fonctionnalités">
+      <video autoplay muted loop>
+        <source src="Video/Epic.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="Titre">
+        <img src="Pictures/Unreal Engine.svg"><br>
+
+        La puissance qui peut concrétiser les rêves les plus fous.
+        <div id="Texte">Définissez une physique révolutionnaire,
+          créez des personnages réalistes ou animez le mouvement d'un brin d'herbe et obtenez un rendu en un temps record.
+          À l'origine, nous avons conçu l'Unreal Engine pour bénéficier de la liberté de création dont nous rêvions en tant que développeurs.
+          Aujourd'hui, nous avons pour objectif de repousser les limites de l'innovation à chaque nouvelle version,
+          pour que vous, et vous uniquement, puissiez fixer les limites du possible. </div>
+      </div>
+
+
+    </div>
 
 
 
