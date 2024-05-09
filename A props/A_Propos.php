@@ -57,6 +57,13 @@
       padding-block: 5rem;
    }
 
+   .LesDevs .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50vh;
+   }
+
    .card__content {
       margin-inline: 1.75rem;
       border-radius: 1.25rem;
@@ -199,6 +206,24 @@
       background-color: #2e4a6b;
       color: var(--white-color);
    }
+
+   body h1 {
+      font-size: 5vw;
+      text-align: center;
+      padding-top: 10vh;
+      padding-bottom: 4vh;
+   }
+
+   body h2 {
+      font-size: 1.4vw;
+      text-align: justify;
+      padding: 0 43vh;
+      text-indent: 2em;
+   }
+
+   .LesDevs {
+      margin-bottom: 10vh;
+   }
 </style>
 
 <header class="header" id="header">
@@ -244,93 +269,114 @@
 </header>
 
 <body>
-   <section class="container">
-      <div class="card__container swiper">
-         <div class="card__content">
-            <div class="swiper-wrapper">
-               <article class="card__article swiper-slide">
-                  <div class="card__image">
-                     <img src="avatar-1.png" alt="image" class="card__img">
-                     <div class="card__shadow"></div>
-                  </div>
+   <div class="Who">
+      <h1>Qui sommes-nous ?</h1>
+      <h2>Avant de plonger dans la lecture, je te recommande vivement d'activer la musique pour ajouter une dimension épique à ta lecture ! (Ne t'attends pas à des extravagances non plus, haha.) Tout d'abord, permets-moi de te présenter qui nous sommes. Nous formons un groupe de quatre passionnés de programmation, réunis dans le cadre d'un projet de fin d'année des plus ambitieux ! Notre objectif ? Développer un jeu en langage C et le rendre accessible sur notre site web. Cependant, nous n'avons pas voulu nous limiter à une simple page web affichant notre jeu. Nous avons plutôt opté pour la création d'un site complet et convivial, disponible en français et en anglais.
+         <br><br>
+      </h2>
+      <h2>Tout au long de ta navigation, tu découvriras donc notre expertise en matière de programmation web (bien que ce ne soit pas notre domaine de prédilection, je le confesse !). Nous avons investi un temps considérable dans ce projet et espérons sincèrement qu'il saura te satisfaire. Si tu as des suggestions ou des remarques à nous transmettre, n'hésite surtout pas à nous contacter. Nous consultons régulièrement nos boîtes de réception chez Boop Adventure ! En outre, nous t'encourageons également à partager ton avis dans la section commentaire de notre site, c’est important pour l’évolution de notre projet. Sur ce, bonne découverte, jeune aventurier !
+      </h2>
 
-                  <div class="card__data">
-                     <h3 class="card__name">Kell Dawx</h3>
-                     <p class="card__description">
-                        Passionate about development and design,
-                        I carry out projects at the request of users.
-                     </p>
 
-                     <a href="#" class="card__button">View More</a>
-                  </div>
-               </article>
+   </div>
 
-               <article class="card__article swiper-slide">
-                  <div class="card__image">
-                     <img src="avatar-2.png" alt="image" class="card__img">
-                     <div class="card__shadow"></div>
-                  </div>
 
-                  <div class="card__data">
-                     <h3 class="card__name">Lotw Fox</h3>
-                     <p class="card__description">
-                        Passionate about development and design,
-                        I carry out projects at the request of users.
-                     </p>
 
-                     <a href="#" class="card__button">View More</a>
-                  </div>
-               </article>
 
-               <article class="card__article swiper-slide">
-                  <div class="card__image">
-                     <img src="avatar-3.png" alt="image" class="card__img">
-                     <div class="card__shadow"></div>
-                  </div>
 
-                  <div class="card__data">
-                     <h3 class="card__name">Sara Mit</h3>
-                     <p class="card__description">
-                        Passionate about development and design,
-                        I carry out projects at the request of users.
-                     </p>
 
-                     <a href="#" class="card__button">View More</a>
-                  </div>
-               </article>
 
-               <article class="card__article swiper-slide">
-                  <div class="card__image">
-                     <img src="avatar-4.png" alt="image" class="card__img">
-                     <div class="card__shadow"></div>
-                  </div>
 
-                  <div class="card__data">
-                     <h3 class="card__name">Jenny Wert</h3>
-                     <p class="card__description">
-                        Passionate about development and design,
-                        I carry out projects at the request of users.
-                     </p>
 
-                     <a href="#" class="card__button">View More</a>
-                  </div>
-               </article>
+
+
+   <div class="LesDevs">
+      <h1>Les Développeurs</h1>
+      <section class="container">
+         <div class="card__container swiper">
+            <div class="card__content">
+               <div class="swiper-wrapper">
+                  <article class="card__article swiper-slide">
+                     <div class="card__image">
+                        <img src="AvatarVico.png" alt="image" class="card__img">
+                        <div class="card__shadow"></div>
+                     </div>
+
+                     <div class="card__data">
+                        <h3 class="card__name">Vico Petit</h3>
+                        <p class="card__description">
+                           Il est juste là pour tout exploser et prouver que Unreal Engine est la meilleure technologie
+                        </p>
+
+                        <a href="#" class="card__button">Voir plus</a>
+                     </div>
+                  </article>
+
+                  <article class="card__article swiper-slide">
+                     <div class="card__image">
+                        <img src="avatar-2.png" alt="image" class="card__img">
+                        <div class="card__shadow"></div>
+                     </div>
+
+                     <div class="card__data">
+                        <h3 class="card__name">Anas Gaoua</h3>
+                        <p class="card__description">
+                           Jsp moi c'est un arabe
+                        </p>
+
+                        <a href="#" class="card__button">Voir plus</a>
+                     </div>
+                  </article>
+
+                  <article class="card__article swiper-slide">
+                     <div class="card__image">
+                        <img src="avatar-3.png" alt="image" class="card__img">
+                        <div class="card__shadow"></div>
+                     </div>
+
+                     <div class="card__data">
+                        <h3 class="card__name">Maxence Rouss.</h3>
+                        <p class="card__description">
+                           Askip il est maire de salty spring, bon...
+                        </p>
+
+                        <a href="#" class="card__button">Voir plus</a>
+                     </div>
+                  </article>
+
+                  <article class="card__article swiper-slide">
+                     <div class="card__image">
+                        <img src="avatar-4.png" alt="image" class="card__img">
+                        <div class="card__shadow"></div>
+                     </div>
+
+                     <div class="card__data">
+                        <h3 class="card__name">Jenny Wert</h3>
+                        <p class="card__description">
+                           Passionate about development and design,
+                           I carry out projects at the request of users.
+                        </p>
+
+                        <a href="#" class="card__button">View More</a>
+                     </div>
+                  </article>
+               </div>
             </div>
-         </div>
 
-         <!-- Navigation buttons -->
-         <div class="swiper-button-next">
-            <i class="ri-arrow-right-s-line"></i>
-         </div>
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next">
+               <i class="ri-arrow-right-s-line"></i>
+            </div>
 
-         <div class="swiper-button-prev">
-            <i class="ri-arrow-left-s-line"></i>
-         </div>
+            <div class="swiper-button-prev">
+               <i class="ri-arrow-left-s-line"></i>
+            </div>
 
-         <!-- Pagination -->
-         <div class="swiper-pagination"></div>
-      </div>
-   </section>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+         </div>
+      </section>
+   </div>
 
    <!--=============== SWIPER JS ===============-->
    <script src="Ext_Slider.js"></script>

@@ -19,6 +19,12 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
     html::-webkit-scrollbar {
       width: 0.00001vw;
     }
@@ -59,6 +65,7 @@
       text-decoration: underline;
       transition: 0.4s;
       line-height: 1.5;
+      margin: 0;
     }
 
     .NewsUnrealContainerImages {
@@ -261,6 +268,7 @@
       font-size: 1.5vw;
       color: white;
       padding-bottom: 0.5vw;
+      margin: 0;
     }
 
     .FortniteInstaller h3 {
@@ -269,6 +277,7 @@
       font-weight: normal;
       font-size: 1vw;
       color: #3b3b3f;
+      margin: 0;
     }
 
     .FortniteInstaller .bouton {
