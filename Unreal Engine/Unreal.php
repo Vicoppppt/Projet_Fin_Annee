@@ -25,6 +25,11 @@
       margin: 0;
     }
 
+    html {
+      font-family: "Syne", sans-serif;
+      overflow-x: hidden;
+    }
+
     html::-webkit-scrollbar {
       width: 0.00001vw;
     }
@@ -330,7 +335,7 @@
 </head>
 <header class="header" id="header">
   <nav class="nav container">
-    <a href="#" class="nav__logo">Logo</a>
+    <a href="#" class="nav__logo">BOOP ADVENTURE</a>
 
     <div class="nav__menu" id="nav-menu">
       <ul class="nav__list">

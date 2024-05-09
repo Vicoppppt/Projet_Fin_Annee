@@ -14,8 +14,9 @@
    <!--=============== CSS ===============-->
    <link rel="stylesheet" href="A_propos.css">
    <link rel="stylesheet" href="../Navigation_Footer/Navigation.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-   <title>Responsive card slider - Bedimcode</title>
+   <title>Boop Adventure | A propos</title>
 </head>
 
 <style>
@@ -224,6 +225,41 @@
    .LesDevs {
       margin-bottom: 10vh;
    }
+
+   /* Styles pour le lecteur audio */
+   .audio-card {
+      max-width: 400px;
+      margin: 50px auto;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   }
+
+   .audio-player {
+      padding: 20px;
+   }
+
+   /* Style pour le bouton play/pause */
+   #playPauseBtn {
+      cursor: pointer;
+      font-size: 24px;
+      color: #fff;
+      /* Changer la couleur du texte en blanc */
+      transition: color 0.3s ease;
+      text-indent: 0em;
+   }
+
+   /* Changement de couleur au survol */
+   #playPauseBtn:hover {
+      color: #ccc;
+      /* Changer la couleur du texte au survol */
+   }
+
+   /* Styles pour les icônes de volume */
+   .fa-volume-down,
+   .fa-volume-up {
+      cursor: pointer;
+   }
 </style>
 
 <header class="header" id="header">
@@ -271,7 +307,29 @@
 <body>
    <div class="Who">
       <h1>Qui sommes-nous ?</h1>
-      <h2>Avant de plonger dans la lecture, je te recommande vivement d'activer la musique pour ajouter une dimension épique à ta lecture ! (Ne t'attends pas à des extravagances non plus, haha.) Tout d'abord, permets-moi de te présenter qui nous sommes. Nous formons un groupe de quatre passionnés de programmation, réunis dans le cadre d'un projet de fin d'année des plus ambitieux ! Notre objectif ? Développer un jeu en langage C et le rendre accessible sur notre site web. Cependant, nous n'avons pas voulu nous limiter à une simple page web affichant notre jeu. Nous avons plutôt opté pour la création d'un site complet et convivial, disponible en français et en anglais.
+      <h2>Avant de plonger dans la lecture, je te recommande vivement d'activer la musique
+         <span id="playPauseBtn" class="play"><i class="fas fa-play"></i></span>
+         <audio id="audio" src="Imaginer.mp3"></audio>
+         <script>
+            const audio = document.getElementById('audio');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+
+            // Événement pour le bouton Play/Pause
+            playPauseBtn.addEventListener('click', function() {
+               if (audio.paused) {
+                  audio.play();
+                  playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                  playPauseBtn.classList.remove('play');
+                  playPauseBtn.classList.add('pause');
+               } else {
+                  audio.pause();
+                  playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                  playPauseBtn.classList.remove('pause');
+                  playPauseBtn.classList.add('play');
+               }
+            });
+         </script>
+         pour ajouter une dimension épique à ta lecture ! (Ne t'attends pas à des extravagances non plus, haha.) Tout d'abord, permets-moi de te présenter qui nous sommes. Nous formons un groupe de quatre passionnés de programmation, réunis dans le cadre d'un projet de fin d'année des plus ambitieux ! Notre objectif ? Développer un jeu en langage C et le rendre accessible sur notre site web. Cependant, nous n'avons pas voulu nous limiter à une simple page web affichant notre jeu. Nous avons plutôt opté pour la création d'un site complet et convivial, disponible en français et en anglais.
          <br><br>
       </h2>
       <h2>Tout au long de ta navigation, tu découvriras donc notre expertise en matière de programmation web (bien que ce ne soit pas notre domaine de prédilection, je le confesse !). Nous avons investi un temps considérable dans ce projet et espérons sincèrement qu'il saura te satisfaire. Si tu as des suggestions ou des remarques à nous transmettre, n'hésite surtout pas à nous contacter. Nous consultons régulièrement nos boîtes de réception chez Boop Adventure ! En outre, nous t'encourageons également à partager ton avis dans la section commentaire de notre site, c’est important pour l’évolution de notre projet. Sur ce, bonne découverte, jeune aventurier !
@@ -297,7 +355,7 @@
             <div class="card__content">
                <div class="swiper-wrapper">
                   <article class="card__article swiper-slide">
-                     <div class="card__image">
+                     <div class="card__image" style="scale: 2;">
                         <img src="AvatarVico.png" alt="image" class="card__img">
                         <div class="card__shadow"></div>
                      </div>
@@ -313,15 +371,15 @@
                   </article>
 
                   <article class="card__article swiper-slide">
-                     <div class="card__image">
-                        <img src="avatar-2.png" alt="image" class="card__img">
+                     <div class="card__image" style="scale: 1.7;">
+                        <img src="AvatarAnas.png" alt="image" class="card__img">
                         <div class="card__shadow"></div>
                      </div>
 
                      <div class="card__data">
                         <h3 class="card__name">Anas Gaoua</h3>
                         <p class="card__description">
-                           Jsp moi c'est un arabe
+                           Maîtrise divers languages, notamment celui de Roubaix. Amateur en pyrotechnie.
                         </p>
 
                         <a href="#" class="card__button">Voir plus</a>
@@ -329,15 +387,15 @@
                   </article>
 
                   <article class="card__article swiper-slide">
-                     <div class="card__image">
-                        <img src="avatar-3.png" alt="image" class="card__img">
+                     <div class="card__image" style="scale: 2.2;">
+                        <img src="AvatarMax.png" alt="image" class="card__img">
                         <div class="card__shadow"></div>
                      </div>
 
                      <div class="card__data">
-                        <h3 class="card__name">Maxence Rouss.</h3>
+                        <h3 class="card__name">Maxence Roussel</h3>
                         <p class="card__description">
-                           Askip il est maire de salty spring, bon...
+                           Amateur de volleyball, Il est également un grand adepte de frites salées au sel salé.
                         </p>
 
                         <a href="#" class="card__button">Voir plus</a>
