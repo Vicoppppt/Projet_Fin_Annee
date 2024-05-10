@@ -135,7 +135,22 @@ if (isset($_POST['Envoyer'])) {
   }
 }
 
+$counter = $_SESSION['Mail'];
+
 ?>
+
+<script type="text/javascript">
+  var count = <?php echo json_encode($counter); ?>;
+
+  loginBtn.addEventListener('click', () => {
+
+    if (count == null) {
+      login.classList.add('show-login');
+    } else {
+      window.location.href = 'nouvelle_page.php';
+    }
+  });
+</script>
 
 
 <body>

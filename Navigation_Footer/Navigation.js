@@ -1,17 +1,19 @@
-const navMenu = document.getElementById('nav-menu'),
-    navToggle = document.getElementById('nav-toggle'),
-    navClose = document.getElementById('nav-close')
-
+const navMenu = document.getElementById('nav-menu');
+const navToggle = document.getElementById('nav-toggle');
+const navClose = document.getElementById('nav-close');
 
 /* Menu show */
 navToggle.addEventListener('click', () => {
-    navMenu.classList.add('show-menu')
-})
+    navMenu.classList.add('show-menu');
+});
+
 
 /* Menu hidden */
 navClose.addEventListener('click', () => {
-    navMenu.classList.remove('show-menu')
-})
+    navMenu.classList.remove('show-menu');
+});
+
+
 
 /*=============== SEARCH ===============*/
 const search = document.getElementById('search'),
@@ -29,14 +31,9 @@ searchClose.addEventListener('click', () => {
 })
 
 /*=============== LOGIN ===============*/
-const login = document.getElementById('login'),
-    loginBtn = document.getElementById('login-btn'),
-    loginClose = document.getElementById('login-close')
-
-/* Login show */
-loginBtn.addEventListener('click', () => {
-    login.classList.add('show-login')
-})
+const login = document.getElementById('login');
+const loginBtn = document.getElementById('login-btn');
+const loginClose = document.getElementById('login-close');
 
 /* Login hidden */
 loginClose.addEventListener('click', () => {
