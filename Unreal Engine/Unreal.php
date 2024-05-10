@@ -79,37 +79,63 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'cust
 
 <!--==================== LOGIN ====================-->
 <div class="login" id="login">
-  <form action="" class="login__form">
-    <h2 class="login__title">Log In</h2>
+  <form class="login__form" method="post">
+    <h2 class="login__title">Connexion</h2>
 
     <div class="login__group">
       <div>
         <label for="email" class="login__label">Email</label>
-        <input type="email" placeholder="Write your email" id="email" class="login__input">
+        <input type="email" placeholder="Ecris ton mail" id="email" class="login__input" name="Mail">
       </div>
 
       <div>
-        <label for="password" class="login__label">Password</label>
-        <input type="password" placeholder="Enter your password" id="password" class="login__input">
+        <label for="password" class="login__label">Mot de passe</label>
+        <input type="password" placeholder="Entre ton mot de passe" id="password" class="login__input" name="Password">
       </div>
     </div>
 
     <div>
       <p class="login__signup">
-        You do not have an account? <a href="#">Sign up</a>
+        Tu n'as pas de compte ? <a href="#">Incris-toi !</a>
       </p>
 
       <a href="#" class="login__forgot">
-        You forgot your password
+        J'ai paumé mon mot de passe...
       </a>
 
-      <button type="submit" class="login__button">Log In</button>
+      <button type="submit" class="login__button" name="Envoyer">Connexion</button>
     </div>
   </form>
 
   <i class="ri-close-line login__close" id="login-close"></i>
   <script src="../Navigation_Footer/Navigation.js"></script>
 </div>
+
+<?php
+
+session_start();
+$bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'customer', 'customer');
+
+
+if (isset($_POST['Envoyer'])) {
+  if (!empty($_POST['Mail']) and !empty($_POST['Password'])) {
+    $Mail = htmlspecialchars($_POST['Mail']);
+    $Password = ($_POST['Password']);
+
+
+    $Utilisateur = $bdd->prepare('SELECT * FROM clients WHERE Mail = ? AND Passwords = ?');
+    $Utilisateur->execute(array($Mail, $Password));
+    if ($Utilisateur->rowCount() > 0) {
+      $_SESSION['Mail'] = $Mail;
+      $_SESSION['Password'] = $Password;
+
+      header('Location: ../Accueil/Accueil.php');
+    } else {
+    }
+  }
+}
+
+?>
 
 
 <body>

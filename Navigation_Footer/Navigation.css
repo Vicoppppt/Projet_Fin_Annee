@@ -167,6 +167,7 @@ a {
         padding-block: 4.5rem 4rem;
         transition: top .4s;
     }
+
 }
 
 .nav__list {
@@ -251,7 +252,7 @@ a {
 
 .login__title {
     font-size: var(--h2-font-size);
-    color: var(--title-color);
+    color: black;
 }
 
 .login__group {
@@ -261,7 +262,7 @@ a {
 .login__label {
     display: block;
     text-align: initial;
-    color: var(--title-color);
+    color: black;
     font-weight: var(--font-medium);
     margin-bottom: .25rem;
 }
@@ -281,6 +282,7 @@ a {
 
 .login__signup {
     margin-bottom: .5rem;
+    color: black;
 }
 
 .login__signup a {
@@ -378,5 +380,16 @@ a {
 @media screen and (min-width: 1150px) {
     .container {
         margin-inline: auto;
+    }
+}
+
+
+@media screen and (max-width: 1023px) {
+    .nav__link {
+        color: black;
+    }
+
+    .nav__close {
+        color: black;
     }
 }
