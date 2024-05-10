@@ -1,3 +1,28 @@
+/*=============== SHOW MENU ===============*/
+const navMenu = document.getElementById('nav-menu'),
+    navToggle = document.getElementById('nav-toggle'),
+    navClose = document.getElementById('nav-close')
+
+document.getElementById("shake").addEventListener("click", () => {
+    var text = document.getElementById("Cadenas");
+
+    navMenu.classList.add('show-menu');
+
+    if (text.classList.contains("shake")) {
+        return;
+    }
+
+    text.classList.add("shake");
+    setTimeout(function () {
+        text.classList.remove("shake");
+    }, 500);
+
+}
+);
+
+
+
+
 /* Menu show */
 navToggle.addEventListener('click', () => {
     navMenu.classList.add('show-menu')
@@ -15,8 +40,7 @@ const search = document.getElementById('search'),
 
 /* Search show */
 searchBtn.addEventListener('click', () => {
-    search.classList.add('show-search');
-    alert("Le bouton a été cliqué !");
+    search.classList.add('show-search')
 })
 
 /* Search hidden */

@@ -5,6 +5,7 @@ html::-webkit-scrollbar {
 }
 
 
+
 html {
     font-family: 'Staatliches', cursive;
     overflow-x: hidden;
@@ -317,4 +318,319 @@ video {
     .TexteNews3 {
         font-size: 4vw;
     }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: "Syne", sans-serif;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+    width: 0.00001vw;
+}
+
+.TexteHaut {
+    opacity: 0.8;
+    color: white;
+}
+
+.NewsUnreal {
+    background: #101014;
+    position: relative;
+    width: auto;
+    height: auto;
+    border-radius: 2vh;
+    box-shadow: 0 0 50px #101014;
+    /* Ombre créant l'effet de halo */
+    padding: 5%;
+    margin: 4% 2%;
+    overflow: hidden;
+    color: white;
+
+}
+
+.NewsUnreal img {
+    aspect-ratio: 16/9;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 2vh;
+
+}
+
+.TitreTexteNews {
+    padding-bottom: 2%;
+    padding-top: 1%;
+    font-size: 2vw;
+    font-weight: normal;
+    text-decoration: underline;
+    transition: 0.4s;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.NewsUnrealContainerImages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+
+        "News1 News2 News3"
+        "TexteNews1 TexteNews2 TexteNews3";
+    column-gap: 2%;
+    margin-bottom: 0;
+}
+
+.NewsUnreal video {
+    width: 60%;
+    height: 130%;
+    position: relative;
+    z-index: 2;
+    border-radius: 25px;
+    object-fit: cover;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.News3 img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+}
+
+.News1 img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+}
+
+.News2 img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+}
+
+.Séparation {
+    border: white solid 0.1vw;
+    margin-bottom: 3%;
+}
+
+.Fonctionnalités {
+    position: relative;
+    display: flex;
+    margin-bottom: 10vh;
+}
+
+.Fonctionnalités p {
+    position: relative;
+}
+
+.Fonctionnalités .Titre {
+    position: relative;
+    font-size: 3vw;
+    word-break: break-word;
+    margin-left: 2%;
+    margin-top: 0.5%;
+}
+
+.Fonctionnalités img {
+    position: relative;
+    width: 20vw;
+    aspect-ratio: auto;
+    object-fit: contain;
+    z-index: 200;
+}
+
+#Texte {
+    position: relative;
+    font-size: 1.2vw;
+    word-break: break-word;
+    margin-top: 2%;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.TexteNews1 {
+    font-size: 1.2vw;
+    text-align: justify;
+    line-height: 1.3;
+}
+
+.TexteNews2 {
+    font-size: 1.2vw;
+    text-align: justify;
+    line-height: 1.3;
+}
+
+.TexteNews3 {
+    font-size: 1.2vw;
+    text-align: justify;
+    line-height: 1.3;
+}
+
+.InformationsInstalle {
+    display: flex;
+    gap: 2vw;
+    margin-bottom: 2vw;
+}
+
+.InformationsInstalle p {
+    margin-bottom: 3vh;
+    font-size: 1vw;
+    color: #98989C;
+}
+
+
+.InformationsInstalle h2 {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-weight: normal;
+    font-size: 1.5vw;
+}
+
+.InformationsInstalle .bouton {
+    display: inline-block;
+    background-color: #26BBFF;
+    /* Couleur bleue */
+    color: #3b3b3f;
+    /* Couleur du texte blanc */
+    padding: 10px 20px;
+    /* Espacement intérieur */
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    /* Coins arrondis */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 5.4%;
+}
+
+.InformationsInstalle .bouton2 {
+    display: flex;
+    background-color: #404044;
+    /* Couleur bleue */
+    color: white;
+    /* Couleur du texte blanc */
+    padding: 10px 20px;
+    /* Espacement intérieur */
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    /* Coins arrondis */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    align-items: center;
+}
+
+.InformationsInstalle .bouton:hover {
+    background-color: #61CDFF;
+    /* Changement de couleur au survol */
+}
+
+.InformationsInstalle .bouton2:hover {
+    background-color: #606064;
+    /* Changement de couleur au survol */
+}
+
+.InformationsInstalle h1 {
+    font-weight: normal;
+    font-size: 1vw;
+}
+
+.FortniteInstaller {
+    position: relative;
+    background-color: transparent;
+    /* Fond transparent */
+    color: #333;
+    /* Couleur du texte */
+    border: 2px solid #999;
+    /* Bordure grise */
+    /* Espacement intérieur */
+    box-sizing: border-box;
+    /* Inclut le padding dans la taille définie */
+    border-radius: 0.5vw;
+    /* Coins arrondis */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.FortniteInstaller h2 {
+    padding: 1.5vw;
+    font-weight: normal;
+    font-size: 1.5vw;
+    color: white;
+    padding-bottom: 0.5vw;
+    margin: 0;
+}
+
+.FortniteInstaller h3 {
+    padding: 1.5vw;
+    padding-top: 0;
+    font-weight: normal;
+    font-size: 1vw;
+    color: #3b3b3f;
+    margin: 0;
+}
+
+.FortniteInstaller .bouton {
+    position: absolute;
+    background-color: #404044;
+    top: 35%;
+    right: 3%;
+    /* Couleur bleue */
+    color: white;
+    /* Couleur du texte blanc */
+    padding: 10px 20px;
+    /* Espacement intérieur */
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    /* Coins arrondis */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.FortniteInstaller .bouton:hover {
+    background-color: #606064;
+    /* Changement de couleur au survol */
+}
+
+.InformationsInstalle .Installation {
+    border-radius: 20px;
+    flex: 1;
+    width: 32%;
+    /* Prend 33% de la largeur de son parent */
+    background-color: #202024;
+    /* Fond gris */
+    padding: 2vw 2vw;
+    box-sizing: border-box;
+    /* Inclut le padding dans la largeur définie */
+    display: inline-block;
+    /* Pour permettre le redimensionnement automatique en hauteur */
+}
+
+.bouton2 img {
+    width: 1vw;
+    margin-right: 0.5vw;
+    aspect-ratio: auto;
+    object-fit: contain;
+    border-radius: 0;
 }

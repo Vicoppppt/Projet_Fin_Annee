@@ -1,3 +1,8 @@
+const navMenu = document.getElementById('nav-menu'),
+    navToggle = document.getElementById('nav-toggle'),
+    navClose = document.getElementById('nav-close')
+
+
 /* Menu show */
 navToggle.addEventListener('click', () => {
     navMenu.classList.add('show-menu')
@@ -15,8 +20,7 @@ const search = document.getElementById('search'),
 
 /* Search show */
 searchBtn.addEventListener('click', () => {
-    search.classList.add('show-search');
-    alert("Le bouton a été cliqué !");
+    search.classList.add('show-search')
 })
 
 /* Search hidden */
