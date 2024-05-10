@@ -59,7 +59,18 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'cust
 
     <div class="nav__actions">
       <i class="ri-search-line nav__search" id="search-btn"></i>
-      <i class="ri-user-line nav__login" id="login-btn"></i>
+      <i class="ri-user-line nav__login" id="login-btn">
+        <div class="bulle" id="bulle">
+          <ul>
+            <a href="#">
+              <li>Compte</li>
+            </a>
+            <a href="../Fonctions/Deconnexion.php">
+              <li>Déconnexion</li>
+            </a>
+          </ul>
+        </div>
+      </i>
       <div class="nav__toggle" id="nav-toggle">
         <i class="ri-menu-line"></i>
       </div>
@@ -128,8 +139,6 @@ if (isset($_POST['Envoyer'])) {
     if ($Utilisateur->rowCount() > 0) {
       $_SESSION['Mail'] = $Mail;
       $_SESSION['Password'] = $Password;
-
-      header('Location: ../Accueil/Accueil.php');
     } else {
     }
   }
@@ -142,13 +151,42 @@ $counter = $_SESSION['Mail'];
 <script type="text/javascript">
   var count = <?php echo json_encode($counter); ?>;
 
-  loginBtn.addEventListener('click', () => {
+  document.addEventListener("DOMContentLoaded", function() {
+    var timer;
+    var bulle = document.getElementById("bulle");
+    var loginBtn = document.getElementById("login-btn");
 
-    if (count == null) {
-      login.classList.add('show-login');
-    } else {
-      window.location.href = 'nouvelle_page.php';
+    function showMenu() {
+      clearTimeout(timer);
+      bulle.classList.add("active");
     }
+
+    function hideMenu() {
+      timer = setTimeout(function() {
+        bulle.classList.remove("active");
+      }, 100); // Délai de 1 seconde (1000 millisecondes)
+    }
+
+    loginBtn.addEventListener('mouseenter', function() {
+      if (count != null) {
+        showMenu();
+      }
+    });
+
+    loginBtn.addEventListener('mouseleave', function() {
+      hideMenu();
+    });
+
+    bulle.addEventListener('mouseenter', function() {
+      showMenu();
+    });
+
+    loginBtn.addEventListener('click', function() {
+
+      if (count == null) {
+        login.classList.add('show-login');
+      }
+    });
   });
 </script>
 
@@ -184,7 +222,7 @@ $counter = $_SESSION['Mail'];
         <img src="Pictures/5.3.png">
       </div>
       <div class="TexteNews1">
-        <p class="TitreTexteNews">Unreal Engine 5.3 est disponible !</p>
+        <p class="TitreTexteNews">Unreal Engine 5.4 disponible !</p>
         Cette version regorge de nouvelles fonctionnalités et d’améliorations qui profiteront aux développeurs et aux créateurs de jeux de tous les secteurs, y compris les outils que nous avons utilisés en interne pour créer et livrer Fortnite Chapter 5, Rocket Racing et Fortnite Festival</p>
       </div>
       <div class="News2">

@@ -92,3 +92,10 @@ function AfficherCommentaires()
       "<p>" . " " . " " . $row['Texte'] . "</p>" . "</p>" . "</div>");
   }
 }
+
+
+function Deconnexion()
+{
+  session_unset();
+  session_destroy();
+}
