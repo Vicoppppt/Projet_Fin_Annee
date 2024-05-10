@@ -18,6 +18,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'cust
   <link rel="icon" href="../Barre Navigation et Footer/Pictures/Icon.png" type="image/x-icon">
   <title>Boop Adventure | Jeu de platforme en ligne</title>
   <link rel="stylesheet" href="Téléchargement.css">
+  <link rel="stylesheet" href="../Navigation_Footer/Navigation.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
 </head>
 
