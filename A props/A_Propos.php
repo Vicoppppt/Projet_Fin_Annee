@@ -30,7 +30,7 @@
             </li>
 
             <li class="nav__item">
-               <a href="#" class="nav__link">A propos</a>
+               <a href="../A props/A_Propos.php" class="nav__link">A propos</a>
             </li>
 
             <li class="nav__item">
@@ -53,13 +53,136 @@
 
       <div class="nav__actions">
          <i class="ri-search-line nav__search" id="search-btn"></i>
-         <i class="ri-user-line nav__login" id="login-btn"></i>
+         <i class="ri-user-line nav__login" id="login-btn">
+            <div class="bulle" id="bulle">
+               <ul>
+                  <a href="#">
+                     <li>Compte</li>
+                  </a>
+                  <a href="../Fonctions/Deconnexion.php">
+                     <li>Déconnexion</li>
+                  </a>
+               </ul>
+            </div>
+         </i>
          <div class="nav__toggle" id="nav-toggle">
             <i class="ri-menu-line"></i>
          </div>
       </div>
    </nav>
 </header>
+
+<!--==================== SEARCH ====================-->
+<div class="search" id="search">
+   <form action="" class="search__form">
+      <i class="ri-search-line search__icon"></i>
+      <input type="search" placeholder="What are you looking for?" class="search__input">
+   </form>
+
+   <i class="ri-close-line search__close" id="search-close"></i>
+</div>
+
+<!--==================== LOGIN ====================-->
+<div class="login" id="login">
+   <form class="login__form" method="post">
+      <h2 class="login__title">Connexion</h2>
+
+      <div class="login__group">
+         <div>
+            <label for="email" class="login__label">Email</label>
+            <input type="email" placeholder="Ecris ton mail" id="email" class="login__input" name="Mail">
+         </div>
+
+         <div>
+            <label for="password" class="login__label">Mot de passe</label>
+            <input type="password" placeholder="Entre ton mot de passe" id="password" class="login__input" name="Password">
+         </div>
+      </div>
+
+      <div>
+         <p class="login__signup">
+            Tu n'as pas de compte ? <a href="#">Incris-toi !</a>
+         </p>
+
+         <a href="#" class="login__forgot">
+            J'ai paumé mon mot de passe...
+         </a>
+
+         <button type="submit" class="login__button" name="Envoyer">Connexion</button>
+      </div>
+   </form>
+
+   <i class="ri-close-line login__close" id="login-close"></i>
+   <script src="../Navigation_Footer/Navigation.js"></script>
+</div>
+
+<?php
+
+session_start();
+$bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'customer', 'customer');
+
+
+if (isset($_POST['Envoyer'])) {
+   if (!empty($_POST['Mail']) and !empty($_POST['Password'])) {
+      $Mail = htmlspecialchars($_POST['Mail']);
+      $Password = ($_POST['Password']);
+
+
+      $Utilisateur = $bdd->prepare('SELECT * FROM clients WHERE Mail = ? AND Passwords = ?');
+      $Utilisateur->execute(array($Mail, $Password));
+      if ($Utilisateur->rowCount() > 0) {
+         $_SESSION['Mail'] = $Mail;
+         $_SESSION['Password'] = $Password;
+      } else {
+      }
+   }
+}
+
+$counter = $_SESSION['Mail'];
+
+?>
+
+<script type="text/javascript">
+   var count = <?php echo json_encode($counter); ?>;
+
+   document.addEventListener("DOMContentLoaded", function() {
+      var timer;
+      var bulle = document.getElementById("bulle");
+      var loginBtn = document.getElementById("login-btn");
+
+      function showMenu() {
+         clearTimeout(timer);
+         bulle.classList.add("active");
+      }
+
+      function hideMenu() {
+         timer = setTimeout(function() {
+            bulle.classList.remove("active");
+         }, 100); // Délai de 1 seconde (1000 millisecondes)
+      }
+
+      loginBtn.addEventListener('mouseenter', function() {
+         if (count != null) {
+            showMenu();
+         }
+      });
+
+      loginBtn.addEventListener('mouseleave', function() {
+         hideMenu();
+      });
+
+      bulle.addEventListener('mouseenter', function() {
+         showMenu();
+      });
+
+      loginBtn.addEventListener('click', function() {
+
+         if (count == null) {
+            login.classList.add('show-login');
+         }
+      });
+   });
+</script>
 
 <body>
    <div class="Who">

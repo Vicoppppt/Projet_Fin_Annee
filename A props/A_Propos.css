@@ -184,7 +184,8 @@ body {
   color: white;
 }
 
-body h1 {
+
+.LesDevs h1 {
   font-size: 5vw;
   text-align: center;
   padding-top: 5vh;
@@ -193,14 +194,25 @@ body h1 {
 
 .Who h1 {
   padding-bottom: 5vh;
+  font-size: 5vw;
+  text-align: center;
+  padding-top: 5vh;
 }
 
-body h2 {
+.Who h2 {
   font-size: 1.4vw;
   text-align: justify;
   padding: 0 43vh;
   text-indent: 2em;
 }
+
+.LesDevs h2 {
+  font-size: 1.4vw;
+  text-align: justify;
+  padding: 0 43vh;
+  text-indent: 2em;
+}
+
 
 .LesDevs {
   margin-bottom: 10vh;
