@@ -1,52 +1,86 @@
 <?php
 
-require('../Fonctions/Nuages.php');
+require('../Fonctions/Fonctions.php');
 
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'customer', 'customer');
 
 ?>
 
+
 <!DOCTYPE html>
-<html lang="FR">
+<html lang="fr">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boop Adventure</title>
-  <link rel="stylesheet" href="Inscription.css">
+  <title>Boîte de Commentaires</title>
+  <script src="https://kit.fontawesome.com/93e07d7a41.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .comment-box {
+      width: 80%;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .comment {
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .user {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .message {
+      margin-top: 5px;
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    .likes,
+    .dislikes {
+      font-size: 14px;
+      color: #999;
+      display: flex;
+      align-items: center;
+    }
+
+    .like-icon,
+    .dislike-icon {
+      margin-right: 5px;
+    }
+
+    .like-icon {
+      color: #4CAF50;
+    }
+
+    .dislike-icon {
+      color: #F44336;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="comment-box">
+    <?php
+    AfficherCommentaires();
+    ?>
 
-  <?php
-  Nuages_Arriere_Plan();
-  ?>
-
-  <div class="center">
-    <h1>Inscription</h1>
-    <form method="POST">
-      <div class="txt_field">
-        <input type="email" name="Mail" required autocomplete="on">
-        <span></span>
-        <label>Email</label>
-      </div>
-      <div class="txt_field">
-        <input type="password" name="Password" required autocomplete="on">
-        <span></span>
-        <label>Mot de passe</label>
-      </div>
-      <div class="txt_field">
-        <input type="pseudo" name="Pseudo" required autocomplete="off">
-        <span></span>
-        <label>Pseudo</label>
-      </div>
-      <a href="../Connexion/Connexion.php">
-        <div class="pass">Déjà inscrit ? Connexion</div>
-      </a>
-      <input type="submit" class='submit' name='Envoyer' value="Inscription">
-    </form>
   </div>
 
 </body>

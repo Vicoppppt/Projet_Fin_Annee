@@ -76,7 +76,7 @@
 <div class="search" id="search">
    <form action="" class="search__form">
       <i class="ri-search-line search__icon"></i>
-      <input type="search" placeholder="What are you looking for?" class="search__input">
+      <input type="search" placeholder="Que recherches-tu ?" class="search__input">
    </form>
 
    <i class="ri-close-line search__close" id="search-close"></i>
@@ -222,7 +222,17 @@ $counter = $_SESSION['Mail'];
 
 
 
-
+   <div class="Isen">
+      <h1>Nos études</h1>
+      <div class="IsenCon">
+         <div style="display:flex; flex-direction: column; width:50%;">
+            <img src="../Annexes/IsenLogo.png">
+            <h2>"Nos études se déroulent à JUNIA Isen, une grande école d'inégnieur<br><br> L’ISEN est un programme de JUNIA, grande école d'ingénieurs. Avec une expertise reconnue depuis plus de 60 ans, JUNIA ISEN forme des ingénieurs aux métiers d’avenir du numérique à Lille et Bordeaux."</h2>
+            <a class="button" href="https://junia.isen.fr/" target="_blank">Visiter le site JUNIA ISEN</a>
+         </div>
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5061.236572351682!2d3.046185476959151!3d50.63420747411537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d578da129f7d%3A0xd134d73fb7f4c699!2sJunia%20ISEN%20Lille!5e0!3m2!1sfr!2sfr!4v1715434412249!5m2!1sfr!2sfr" width="450" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+   </div>
 
 
 
@@ -236,7 +246,7 @@ $counter = $_SESSION['Mail'];
                <div class="swiper-wrapper">
                   <article class="card__article swiper-slide">
                      <div class="card__image" style="scale: 2;">
-                        <img src="AvatarVico.png" alt="image" class="card__img">
+                        <img src="../Annexes/AvatarVico.png" alt="image" class="card__img">
                         <div class="card__shadow"></div>
                      </div>
 
@@ -252,7 +262,7 @@ $counter = $_SESSION['Mail'];
 
                   <article class="card__article swiper-slide">
                      <div class="card__image" style="scale: 1.7;">
-                        <img src="AvatarAnas.png" alt="image" class="card__img">
+                        <img src="../Annexes/AvatarAnas.png" alt="image" class="card__img">
                         <div class="card__shadow"></div>
                      </div>
 
@@ -268,7 +278,7 @@ $counter = $_SESSION['Mail'];
 
                   <article class="card__article swiper-slide">
                      <div class="card__image" style="scale: 2.2;">
-                        <img src="AvatarMax.png" alt="image" class="card__img">
+                        <img src="../Annexes/AvatarMax.png" alt="image" class="card__img">
                         <div class="card__shadow"></div>
                      </div>
 
@@ -284,7 +294,7 @@ $counter = $_SESSION['Mail'];
 
                   <article class="card__article swiper-slide">
                      <div class="card__image" style="scale: 2.1;">
-                        <img src="AvatarSam.png" alt="image" class="card__img">
+                        <img src="../Annexes/AvatarSam.png" alt="image" class="card__img">
                         <div class="card__shadow"></div>
                      </div>
 
@@ -294,7 +304,7 @@ $counter = $_SESSION['Mail'];
                            Grand amateur de jus de pomme,et violoniste de renomé, cet être encule les pitchs.
                         </p>
 
-                        <a href="#" class="card__button">View More</a>
+                        <a href="#" class="card__button">Voir plus</a>
                      </div>
                   </article>
                </div>

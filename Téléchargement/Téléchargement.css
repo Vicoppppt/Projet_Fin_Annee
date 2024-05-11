@@ -12,13 +12,12 @@ html::-webkit-scrollbar {
 
 
 body {
-    background-color: #232628;
     font-family: 'Staatliches', cursive;
     height: 100vh;
 }
 
-.Nav4 {
-    text-decoration: underline;
+.header {
+    background-color: transparent;
 }
 
 
@@ -30,18 +29,19 @@ body {
 
 .Total {
     display: grid;
-    height: 70vh;
-    grid-template-columns: 2fr 3fr 2fr;
-    grid-template-rows: 0.7fr 1.3fr;
-    grid-template-areas: "Communaute Jeu Maj"
-        "Communaute Credits Maj";
+    height: auto;
+    grid-template-columns: 1.5fr 1.5fr;
+    grid-template-rows: 0.7fr 2fr;
+    grid-template-areas: "Jeu Maj"
+        "Credits Maj";
+    background-color: transparent;
 }
 
 
 .GridPrincipale {
     grid-area: Jeu;
     position: relative;
-    background-color: #111314;
+    background-color: #81b0bc;
     border-radius: 10px;
     margin: 5%;
     height: fit-content;
@@ -52,7 +52,7 @@ body {
     grid-area: Communaute;
     margin: 3%;
     position: relative;
-    background-color: #292D2E;
+    background-color: #2e4a6b;
     border-radius: 10px;
 }
 
@@ -72,17 +72,23 @@ body {
 }
 
 .Photo {
-    height: 22vh;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
 }
 
 .Separationn {
+    margin-top: 10vh;
     font-size: 1vw;
     align-items: center;
     justify-content: space-around;
     display: flex;
     height: 5vh;
-    background-color: #36393B;
+    background-color: transparent;
     color: white;
 }
 
@@ -98,7 +104,7 @@ body {
     grid-area: Maj;
     margin: 5%;
     position: relative;
-    background-color: #111314;
+    background-color: #81b0bc;
     border-radius: 10px;
     overflow: auto;
     padding: 5%;
@@ -113,11 +119,12 @@ body {
     right: 10%;
     padding: 2%;
     top: -3%;
-    background-color: black;
-    border: 3px solid black;
+    background-color: #1E3248;
     border-radius: 5px;
     color: white;
 }
+
+
 
 .TitreTele {
     padding: 5%;
@@ -139,7 +146,7 @@ body {
     margin: 5%;
     padding: 5%;
     margin-top: 0%;
-    background-color: #111314;
+    background-color: #2e4a6b;
     border-radius: 15px;
     overflow: auto;
     max-height: 65vh;

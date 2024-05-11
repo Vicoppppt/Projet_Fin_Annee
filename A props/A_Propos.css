@@ -199,6 +199,83 @@ body {
   padding-top: 5vh;
 }
 
+.Isen iframe {
+  border: 0;
+  border-radius: 20px;
+  right: 0;
+  box-shadow: 0 0 20px #101014;
+}
+
+.IsenCon {
+  display: flex;
+  background-color: #F1B25D;
+  box-shadow: 0 0 20px #F1B25D;
+  width: auto;
+  border-radius: 20px;
+  padding: 5vh;
+  justify-content: space-between;
+  margin-left: 30Vh;
+  margin-right: 30Vh;
+}
+
+.Isen .button {
+  background-color: #402953;
+  /* Couleur de fond */
+  border: none;
+  /* Pas de bord */
+  color: white;
+  /* Couleur du texte */
+  padding: 1.5vh 2.7vh;
+  /* Rembourrage du bouton */
+  text-align: center;
+  /* Centrer le texte */
+  text-decoration: none;
+  /* Pas de soulignement */
+  display: inline-block;
+  /* Afficher en ligne */
+  font-size: 16px;
+  /* Taille de police */
+  border-radius: 10px;
+  /* Bords arrondis */
+  cursor: pointer;
+  /* Curseur pointer */
+  transition-duration: 0.4s;
+  /* Durée de transition */
+  width: fit-content;
+  font-family: "Syne", sans-serif;
+}
+
+.IsenCon img {
+  width: 70%;
+  height: fit-content;
+  margin-bottom: 3vh;
+}
+
+
+.Isen h1 {
+  padding-bottom: 5vh;
+  font-size: 5vw;
+  text-align: center;
+  padding-top: 5vh;
+}
+
+.Isen h2 {
+  font-size: 1.4vw;
+  text-align: justify;
+  padding: 0 43vh;
+  text-indent: 2em;
+  margin-bottom: 5vh;
+}
+
+.IsenCon h2 {
+  color: #402953;
+  font-size: 1.4vw;
+  text-align: justify;
+  text-indent: 0;
+  padding: 0;
+  margin-bottom: 2vh;
+}
+
 .Who h2 {
   font-size: 1.4vw;
   text-align: justify;

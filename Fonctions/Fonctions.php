@@ -76,7 +76,7 @@ function BoutonComplet()
 function AfficherCommentaires()
 {
   $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'customer', 'customer');
-  $Commentaires = $bdd->prepare('SELECT id_com, Mail, Texte FROM commentaires ORDER BY id_com DESC');
+  $Commentaires = $bdd->prepare('SELECT id_com, Mail, Texte, Pouce, UnPouce FROM commentaires ORDER BY id_com DESC');
   $Commentaires->execute();
   $Resultats = $Commentaires->fetchAll();
 
@@ -89,7 +89,10 @@ function AfficherCommentaires()
       "<p class='user'>"
       . $Resultats[0]['Pseudo'] . ":" .
       "</p>" .
-      "<p>" . " " . " " . $row['Texte'] . "</p>" . "</p>" . "</div>");
+      "<p class='message'>" . " " . " " . $row['Texte'] . "</p>" . "</p>" .
+      "<div class='likes'><i class='fa-regular fa-thumbs-up'></i> " . $row['Pouce'] . "</div>" .
+      "<div class='dislikes'><i class='fa-regular fa-thumbs-down'></i>" . $row['UnPouce'] . "</div>" .
+      "</div>");
   }
 }
 
