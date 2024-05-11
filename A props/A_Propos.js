@@ -1,7 +1,4 @@
 
-
-
-/*=============== SWIPER JS ===============*/
 let swiperCards = new Swiper(".card__content", {
   loop: true,
   spaceBetween: 32,
@@ -31,24 +28,7 @@ let swiperCards = new Swiper(".card__content", {
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
   navToggle = document.getElementById('nav-toggle'),
-  navClose = document.getElementById('nav-close')
-
-document.getElementById("shake").addEventListener("click", () => {
-  var text = document.getElementById("Cadenas");
-
-  navMenu.classList.add('show-menu');
-
-  if (text.classList.contains("shake")) {
-    return;
-  }
-
-  text.classList.add("shake");
-  setTimeout(function () {
-    text.classList.remove("shake");
-  }, 500);
-
-}
-);
+  navClose = document.getElementById('nav-close');
 
 
 

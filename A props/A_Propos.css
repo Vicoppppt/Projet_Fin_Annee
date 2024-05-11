@@ -35,12 +35,6 @@ img {
 }
 
 /*=============== CARD ===============*/
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 
 .card__container {
   padding-block: 5rem;
@@ -180,4 +174,69 @@ img {
   .swiper-button-next {
     right: -1rem;
   }
+}
+
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: #2e4a6b;
+  color: white;
+}
+
+body h1 {
+  font-size: 5vw;
+  text-align: center;
+  padding-top: 5vh;
+  padding-bottom: 0;
+}
+
+.Who h1 {
+  padding-bottom: 5vh;
+}
+
+body h2 {
+  font-size: 1.4vw;
+  text-align: justify;
+  padding: 0 43vh;
+  text-indent: 2em;
+}
+
+.LesDevs {
+  margin-bottom: 10vh;
+}
+
+/* Styles pour le lecteur audio */
+.audio-card {
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.audio-player {
+  padding: 20px;
+}
+
+/* Style pour le bouton play/pause */
+#playPauseBtn {
+  cursor: pointer;
+  font-size: 24px;
+  color: red;
+  /* Changer la couleur du texte en blanc */
+  transition: color 0.3s ease;
+  text-indent: 0em;
+}
+
+/* Changement de couleur au survol */
+#playPauseBtn:hover {
+  color: red;
+  /* Changer la couleur du texte au survol */
+}
+
+/* Styles pour les icônes de volume */
+.fa-volume-down,
+.fa-volume-up {
+  cursor: pointer;
 }

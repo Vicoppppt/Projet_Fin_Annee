@@ -15,7 +15,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'cust
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="../Barre Navigation et Footer/Pictures/Icon.png" type="image/x-icon">
+  <link rel="icon" href="../Annexes/Logo.png" type="image/x-icon">
   <title>Boop Adventure | Unreal Engine</title>
   <link rel="stylesheet" href="Unreal.css">
   <link rel="stylesheet" href="../Navigation_Footer/Navigation.css">
@@ -36,7 +36,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'cust
         </li>
 
         <li class="nav__item">
-          <a href="#" class="nav__link">A propos</a>
+          <a href="../A props/A_Propos.php" class="nav__link">A propos</a>
         </li>
 
         <li class="nav__item">
