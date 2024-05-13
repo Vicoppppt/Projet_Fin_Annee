@@ -62,7 +62,7 @@
         </div>
         <div class="section">
             <h2>Section 3</h2>
-            <p>Donec quam felis, ultricies nec,ygygygggzdza pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+            <p>Donec quam felis, ultricies nec,zdza pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
         </div>
     </div>
 
