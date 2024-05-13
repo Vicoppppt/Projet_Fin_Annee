@@ -3,7 +3,7 @@
 require('../Fonctions/Fonctions.php');
 
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'customer', 'customer');
+$bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'root', 'root');
 
 
 if (isset($_POST['Envoyer'])) {
