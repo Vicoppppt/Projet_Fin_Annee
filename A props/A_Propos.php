@@ -19,58 +19,9 @@
    <title>Boop Adventure | A propos</title>
 </head>
 
-<header class="header" id="header">
-   <nav class="nav container">
-   <a href="#" class="nav__logo" style="font-family:'Bauhaus 93', sans-serif; font-size:x-large;  letter-spacing: 0px;">BOOP ADVENTURE</a>
-
-      <div class="nav__menu" id="nav-menu">
-         <ul class="nav__list">
-            <li class="nav__item">
-               <a href="../Accueil/Accueil.php" class="nav__link">Accueil</a>
-            </li>
-
-            <li class="nav__item">
-               <a href="../A props/A_Propos.php" class="nav__link">A propos</a>
-            </li>
-
-            <li class="nav__item">
-               <a href="../Unreal Engine/Unreal.php" class="nav__link">Unreal</a>
-            </li>
-
-            <li class="nav__item">
-               <a href="#" class="nav__link">Le Jeu</a>
-            </li>
-
-            <li class="nav__item">
-               <a href="#" class="nav__link">Boutique</a>
-            </li>
-         </ul>
-
-         <div class="nav__close" id="nav-close">
-            <i class="ri-close-line"></i>
-         </div>
-      </div>
-
-      <div class="nav__actions">
-         <i class="ri-search-line nav__search" id="search-btn"></i>
-         <i class="ri-user-line nav__login" id="login-btn">
-            <div class="bulle" id="bulle">
-               <ul>
-                  <a href="#">
-                     <li>Compte</li>
-                  </a>
-                  <a href="../Fonctions/Deconnexion.php">
-                     <li>Déconnexion</li>
-                  </a>
-               </ul>
-            </div>
-         </i>
-         <div class="nav__toggle" id="nav-toggle">
-            <i class="ri-menu-line"></i>
-         </div>
-      </div>
-   </nav>
-</header>
+<?php
+include '../Annexes/header.php';
+?>
 
 <!--==================== SEARCH ====================-->
 <div class="search" id="search">
@@ -118,7 +69,6 @@
 
 <?php
 
-session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'root', 'root');
 
 
@@ -209,7 +159,7 @@ $counter = $_SESSION['Mail'];
                }
             });
          </script>
-         pour ajouter une dimension épique à ta lecture ! (Ne t'attends pas à des extravagances non plus, haha.) Tout d'abord, permets-moi de te présenter qui nous sommes. Nous formons un groupe de quatre passionnés de programmation, réunis dans le cadre d'un projet de fin d'année des plus ambitieux ! Notre objectif ? Développer un jeu en langage C et le rendre accessible sur notre site web. Cependant, nous n'avons pas voulu nous limiter à une simple page web affichant notre jeu. Nous avons plutôt opté pour la création d'un site complet et convivial, disponible en français et en anglais.
+         pour ajouter une dimension épique à ta lecture ! (Ne t'attends pas à des extravagances non plus, haha.) Tout d'abord, permets-moi de te présenter qui nous sommes. Nous formons un groupe de six passionnés de programmation, réunis dans le cadre d'un projet de fin d'année des plus ambitieux ! Notre objectif ? Développer un jeu en langage C et le rendre accessible sur notre site web. Cependant, nous n'avons pas voulu nous limiter à une simple page web affichant notre jeu. Nous avons plutôt opté pour la création d'un site complet et convivial, disponible en français et en anglais.
          <br><br>
       </h2>
       <h2>Tout au long de ta navigation, tu découvriras donc notre expertise en matière de programmation web (bien que ce ne soit pas notre domaine de prédilection, je le confesse !). Nous avons investi un temps considérable dans ce projet et espérons sincèrement qu'il saura te satisfaire. Si tu as des suggestions ou des remarques à nous transmettre, n'hésite surtout pas à nous contacter. Nous consultons régulièrement nos boîtes de réception chez Boop Adventure ! En outre, nous t'encourageons également à partager ton avis dans la section commentaire de notre site, c’est important pour l’évolution de notre projet. Sur ce, bonne découverte, jeune aventurier !
@@ -301,12 +251,45 @@ $counter = $_SESSION['Mail'];
                      <div class="card__data">
                         <h3 class="card__name">Samuel Umtiti</h3>
                         <p class="card__description">
-                           Grand amateur de jus de pomme,et violoniste de renomé, cet être encule les pitchs.
+                           Grand amateur de jus de pomme, et violoniste de renomé, cet être encule les pitchs.
                         </p>
 
                         <a href="#" class="card__button">Voir plus</a>
                      </div>
                   </article>
+
+                  <article class="card__article swiper-slide">
+                     <div class="card__image" style="scale: 2.3;">
+                        <img src="../Annexes/AvatarTheo.png" alt="image" class="card__img">
+                        <div class="card__shadow"></div>
+                     </div>
+
+                     <div class="card__data">
+                        <h3 class="card__name">Théo Lesage</h3>
+                        <p class="card__description">
+                           Amateur de sport. <br> Mais surtout de bonne nourriture et d'animé.
+                        </p>
+
+                        <a href="#" class="card__button">Voir plus</a>
+                     </div>
+                  </article>
+
+                  <article class="card__article swiper-slide">
+                     <div class="card__image" style="scale: 2.2;">
+                        <img src="../Annexes/AvatarAlexis.png" alt="image" class="card__img">
+                        <div class="card__shadow"></div>
+                     </div>
+
+                     <div class="card__data">
+                        <h3 class="card__name">Alexis Est vin</h3>
+                        <p class="card__description">
+                           Adepte à la muscu, <br> Les protéines lui agisse sur le colon.
+                        </p>
+
+                        <a href="#" class="card__button">Voir plus</a>
+                     </div>
+                  </article>
+
                </div>
             </div>
 
