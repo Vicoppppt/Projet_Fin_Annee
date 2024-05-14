@@ -40,5 +40,29 @@ function creer_noeud_aleatoire() {
   return $nouveau_noeud;
 }
 
-function cree_array_arbre()
+function cree_arbre_bi($nbr_etage){
+  if ($nbr_etage==0){
+    
+    return array(creer_noeud_aleatoire());
+  }
+
+  
+  $arbre = array(creer_noeud_aleatoire());
+  
+  for ($j = 1;$j<=$nbr_etage;$j++){
+    for ($i=1;$i<=2**$j;$i++){
+      
+      if( $j == $nbr_etage){
+        array_push($arbre,new Noeuds(0, rand(0, 1)));  
+      }
+      else{
+      array_push($arbre,creer_noeud_aleatoire());
+      }
+    }
+  }
+  return $arbre;
+}
+
+
+print_a(cree_arbre_bi(5));
 ?>
