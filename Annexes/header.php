@@ -11,20 +11,18 @@
                 }
 
                 if (basename($_SERVER['PHP_SELF']) !== 'A_Propos.php') {
-                    echo '<li class="nav__item"> <a href="../A props/A_Propos.php" class="nav__link">Accueil</a> </li>';
+                    echo '<li class="nav__item"> <a href="../A props/A_Propos.php" class="nav__link">A propos</a> </li>';
                 }
 
                 if (basename($_SERVER['PHP_SELF']) !== 'Unreal.php') {
                     echo '<li class="nav__item"><a href="../Unreal Engine/Unreal.php" class="nav__link">Unreal</a></li>';
                 }
 
-                if (basename($_SERVER['PHP_SELF']) !== '#') {
+                if (basename($_SERVER['PHP_SELF']) !== '') {
                     echo '<li class="nav__item"><a href="#" class="nav__link">Le Jeu</a></li>';
                 }
 
-                
-
-                if (basename($_SERVER['PHP_SELF']) !== '#') {
+                if (basename($_SERVER['PHP_SELF']) !== '') {
                     echo '<li class="nav__item"><a href="#" class="nav__link">Boutique</a></li>';
                 } 
             ?>
