@@ -148,72 +148,6 @@
     </article>
 </div>
 
-<div class="Reviews">
-    <h1>Les avis</h1>
-<div class="wrapper__Vico">
-    <div class="box__Vico">
-      <i class="fas fa-quote-left quote__Vico"></i>
-      <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
-      <div class="content__Vico">
-        <div class="info__Vico">
-          <div class="name__Vico">Alex Smith</div>
-          <div class="job__Vico">Designer | Developer</div>
-          <div class="stars__Vico">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-        </div>
-        <div class="image__Vico">
-          <img src="images/profile-1.jpeg" alt="">
-        </div>
-      </div>
-    </div>
-    <div class="box__Vico">
-      <i class="fas fa-quote-left quote__Vico"></i>
-      <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
-      <div class="content__Vico">
-        <div class="info__Vico">
-          <div class="name__Vico">Steven Chris</div>
-          <div class="job__Vico">YouTuber | Blogger</div>
-          <div class="stars__Vico">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-        </div>
-        <div class="image__Vico">
-          <img src="images/profile-2.jpeg" alt="">
-        </div>
-      </div>
-    </div>
-    <div class="box__Vico">
-      <i class="fas fa-quote-left quote__Vico"></i>
-      <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
-      <div class="content__Vico">
-        <div class="info__Vico">
-          <div class="name__Vico">Kristina Bellis</div>
-          <div class="job__Vico">Freelancer | Advertiser</div>
-          <div class="stars__Vico">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-        </div>
-        <div class="image__Vico">
-          <img src="images/profile-3.jpeg" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <h1 class="Categorie">
     <div>
         Cosmetics in-game
@@ -255,6 +189,78 @@
         <p class="Prix">2$99</p>
     </article>
 </div>
+
+
+<h1 class="Categorie">
+    <div>
+    Avis
+    </div>
+</h1>
+<div class="Avis">
+<div class="wrapper__Vico">
+    <div class="box__Vico">
+      <i class="ri-double-quotes-l quote__Vico"></i>
+      <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+      <div class="content__Vico">
+        <div class="info__Vico">
+          <div class="name__Vico">Alex Smith</div>
+          <div class="job__Vico">Designer | Developer</div>
+          <div class="stars__Vico">
+          <i class="ri-star-line"></i>
+        <i class="ri-star-line"></i>
+        <i class="ri-star-line"></i>
+        <i class="ri-star-line"></i>
+        <i class="ri-star-line"></i>
+          </div>
+        </div>
+        <div class="image__Vico">
+          <img src="../Annexes/Logo.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="box__Vico">
+      <i class="ri-double-quotes-l quote__Vico"></i>
+      <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+      <div class="content__Vico">
+        <div class="info__Vico">
+          <div class="name__Vico">Steven Chris</div>
+          <div class="job__Vico">YouTuber | Blogger</div>
+          <div class="stars__Vico">
+          <i class="ri-star-line"></i>
+        <i class="ri-star-line"></i>
+        <i class="ri-star-line"></i>
+        <i class="ri-star-line"></i>
+        <i class="ri-star-line"></i>
+          </div>
+        </div>
+        <div class="image__Vico">
+        <img src="../Annexes/Logo.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="box__Vico">
+      <i class="ri-double-quotes-l quote__Vico"></i>
+      <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
+      <div class="content__Vico">
+        <div class="info__Vico">
+          <div class="name__Vico">Kristina Bellis</div>
+          <div class="job__Vico">Freelancer | Advertiser</div>
+          <div class="stars__Vico">
+          <i class="ri-star-line"></i>
+        <i class="ri-star-line"></i>
+        <i class="ri-star-line"></i>
+        <i class="ri-star-line"></i>
+        <i class="ri-star-line"></i>
+          </div>
+        </div>
+        <div class="image__Vico">
+        <img src="../Annexes/Logo.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
 
 
 

@@ -108,7 +108,7 @@ html::-webkit-scrollbar {
     color: white;
     font-size: 10vh;
     padding: 3vh;
-    border-bottom: 10px solid white;
+    border-bottom: 7px solid white;
     margin-bottom: 3%;
 }
 
@@ -184,4 +184,10 @@ html::-webkit-scrollbar {
       width: 100%;
     }
   }
-  
+
+  .Avis{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    margin-bottom: 10vh;
+  }
