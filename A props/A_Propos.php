@@ -301,7 +301,7 @@ $counter = $_SESSION['Mail'];
                      <div class="card__data">
                         <h3 class="card__name">Samuel Umtiti</h3>
                         <p class="card__description">
-                           Grand amateur de jus de pomme,et violoniste de renomé, cet être encule les pitchs.
+                           Grand amateur de jus de pomme, et violoniste de renomé, cet être encule les pitchs.
                         </p>
 
                         <a href="#" class="card__button">Voir plus</a>
@@ -333,7 +333,7 @@ $counter = $_SESSION['Mail'];
                      <div class="card__data">
                         <h3 class="card__name">Alexis Est vin</h3>
                         <p class="card__description">
-                           Accro à la muscu. <br> Mais surtout quand il pète il trout son slip.
+                           Adepte à la muscu, <br> Les protéines lui agisse sur le colon.
                         </p>
 
                         <a href="#" class="card__button">Voir plus</a>
