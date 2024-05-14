@@ -213,8 +213,5 @@ include '../Annexes/header.php';
   </div>
 
 
-
-
-
 </body>
 </html>
