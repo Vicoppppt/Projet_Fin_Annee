@@ -2,193 +2,208 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: "Syne", sans-serif;
-    
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Syne", sans-serif;
+
 }
 
-body{
-    background-color: gray;
+body {
+  background-color: gray;
 }
 
 html::-webkit-scrollbar {
-    width: 0.00001vw;
+  width: 0.00001vw;
 }
 
-.Categorie div{
-    font-size: 5vw;
-    padding-bottom: 5vh;
-    color: white;
+.Categorie div {
+  font-size: 5vw;
+  padding-bottom: 5vh;
+  color: white;
 }
 
-.Categorie{
-    margin: 10vh 20vh;
-    background-color: transparent;
-    border-bottom: 10px solid white;
+.Categorie {
+  margin: 10vh 20vh;
+  background-color: transparent;
+  border-bottom: 10px solid white;
 }
 
-.Carte_Boutique{
-    height: auto;
-    margin: 10vh 20vh;
-    background-color: transparent;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;  
-}
-
-.Carte_Boutique article{
-    position: relative;
-    width: 320px;
-    margin: 20px;
-    padding: 15px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    transition: 0.4s ease;
-}
-
-
-.Carte_Boutique article:hover{
-    scale: 1.1;
-    box-shadow: 0 4px 50px rgba(255, 255, 255, 0.7);
-
-}
-
-#Cart{
-    position: absolute;
-    right: 5%;
-    bottom: 4%;
-}
-
-
-.Carte_Boutique article i{
-    position: relative;
-    color: black;
-    opacity: 1;
-    scale: 1.3;
-}
-
-.ri-star-line {
-    scale: 2;
-}
-
-.Carte_Boutique article p{
-    margin-top: 1vh;
-    color: black;
-    opacity: 1;
-}
-
-.Prix{
-    position: absolute;
-    right: 13%;
-    bottom: 4%;
+.Carte_Boutique {
+  height: auto;
+  margin: 10vh 20vh;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .Carte_Boutique article {
-    color: gray;
+  position: relative;
+  width: 400px;
+  margin: 20px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: 0.4s ease;
+}
+
+
+.Carte_Boutique article:hover {
+  scale: 1.1;
+  box-shadow: 0 4px 50px rgba(255, 255, 255, 0.7);
+
+}
+
+#Cart {
+  position: absolute;
+  right: 5%;
+  bottom: 4%;
+  font-size: 25px;
+}
+
+
+.Carte_Boutique article i {
+  position: relative;
+  color: black;
+  opacity: 1;
+  font-size: 20px;
+  margin: 0;
+}
+
+.Carte_Boutique .Nom {
+  font-size: 20px;
+}
+
+.Carte_Boutique article p {
+  margin-top: 1vh;
+  color: black;
+  opacity: 1;
+}
+
+.Prix {
+  position: absolute;
+  right: 13%;
+  bottom: 4%;
+  font-size: 25px;
+}
+
+.Carte_Boutique article {
+  color: gray;
 }
 
 .Carte_Boutique img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1vh;
+  opacity: 1;
+}
+
+.Reviews {
+  display: grid;
+  margin: 10vh 20vh;
+  background-color: red;
+  padding: 5vh;
+  border-radius: 10px;
+}
+
+.Reviews h1 {
+  color: white;
+  font-size: 10vh;
+  padding: 3vh;
+  border-bottom: 7px solid white;
+  margin-bottom: 3%;
+}
+
+::selection {
+  background: rgba(23, 162, 184, 0.3);
+}
+
+.wrapper__Vico {
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper__Vico .box__Vico {
+  background: #fff;
+  width: calc(33% - 10px);
+  padding: 25px;
+  border-radius: 3px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.wrapper__Vico .box__Vico i.quote__Vico {
+  font-size: 20px;
+  color: #17a2b8;
+}
+
+.wrapper__Vico .box__Vico .content__Vico {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.box__Vico .info__Vico .name__Vico {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.box__Vico .info__Vico .job__Vico {
+  font-size: 16px;
+  font-weight: 500;
+  color: #17a2b8;
+}
+
+.box__Vico .info__Vico .stars__Vico {
+  margin-top: 2px;
+}
+
+.box__Vico .info__Vico .stars__Vico i {
+  color: #17a2b8;
+}
+
+.box__Vico .content__Vico .image__Vico {
+  height: 75px;
+  width: 75px;
+  padding: 3px;
+  background: #17a2b8;
+  border-radius: 50%;
+}
+
+.content__Vico .image__Vico img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.box__Vico:hover .content__Vico .image__Vico img {
+  border-color: #fff;
+}
+
+@media (max-width: 1045px) {
+  .wrapper__Vico .box__Vico {
+    width: calc(50% - 10px);
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 702px) {
+  .wrapper__Vico .box__Vico {
     width: 100%;
-    border-radius: 8px;
-    margin-bottom: 1vh;
-    opacity: 1;
+  }
 }
 
-.Reviews{
-    display: grid;
-    margin: 10vh 20vh;
-    background-color: red;
-    padding: 5vh;
-    border-radius: 10px;
+.Avis {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  margin-bottom: 10vh;
 }
-
-.Reviews h1{
-    color: white;
-    font-size: 10vh;
-    padding: 3vh;
-    border-bottom: 7px solid white;
-    margin-bottom: 3%;
-}
-
-::selection{
-    background: rgba(23,162,184,0.3);
-  }
-  .wrapper__Vico{
-    max-width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .wrapper__Vico .box__Vico{
-    background: #fff;
-    width: calc(33% - 10px);
-    padding: 25px;
-    border-radius: 3px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
-  }
-  .wrapper__Vico .box__Vico i.quote__Vico{
-    font-size: 20px;
-    color: #17a2b8;
-  }
-  .wrapper__Vico .box__Vico .content__Vico{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 10px;
-  }
-  .box__Vico .info__Vico .name__Vico{
-    font-weight: 600;
-    font-size: 17px;
-  }
-  .box__Vico .info__Vico .job__Vico{
-    font-size: 16px;
-    font-weight: 500;
-    color: #17a2b8;
-  }
-  .box__Vico .info__Vico .stars__Vico{
-    margin-top: 2px;
-  }
-  .box__Vico .info__Vico .stars__Vico i{
-    color: #17a2b8;
-  }
-  .box__Vico .content__Vico .image__Vico{
-    height: 75px;
-    width: 75px;
-    padding: 3px;
-    background: #17a2b8;
-    border-radius: 50%;
-  }
-  .content__Vico .image__Vico img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #fff;
-  }
-  .box__Vico:hover .content__Vico .image__Vico img{
-    border-color: #fff;
-  }
-  
-  @media (max-width: 1045px) {
-    .wrapper__Vico .box__Vico{
-      width: calc(50% - 10px);
-      margin: 10px 0;
-    }
-  }
-  @media (max-width: 702px) {
-    .wrapper__Vico .box__Vico{
-      width: 100%;
-    }
-  }
-
-  .Avis{
-    display: grid;
-    height: 100%;
-    place-items: center;
-    margin-bottom: 10vh;
-  }
