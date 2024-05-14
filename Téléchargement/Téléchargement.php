@@ -1,8 +1,7 @@
 <?php
-
+include '../Annexes/header.php';
 require('../Fonctions/Fonctions.php');
 
-session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'customer', 'customer');
 
 ?>
@@ -21,60 +20,6 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'cust
   <link rel="stylesheet" href="../Navigation_Footer/Navigation.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
 </head>
-
-<header class="header" id="header">
-  <nav class="nav container">
-    <a href="#" class="nav__logo">Logo</a>
-
-    <div class="nav__menu" id="nav-menu">
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a href="../Accueil/Accueil.php" class="nav__link">Accueil</a>
-        </li>
-
-        <li class="nav__item">
-          <a href="../A props/A_Propos.php" class="nav__link">A propos</a>
-        </li>
-
-        <li class="nav__item">
-          <a href="../Unreal Engine/Unreal.php" class="nav__link">Unreal</a>
-        </li>
-
-        <li class="nav__item">
-          <a href="#" class="nav__link">Téléchargement</a>
-        </li>
-
-        <li class="nav__item">
-          <a href="#" class="nav__link">Boutique</a>
-        </li>
-      </ul>
-
-      <div class="nav__close" id="nav-close">
-        <i class="ri-close-line"></i>
-      </div>
-    </div>
-
-    <div class="nav__actions">
-      <i class="ri-search-line nav__search" id="search-btn"></i>
-      <i class="ri-user-line nav__login" id="login-btn">
-        <div class="bulle" id="bulle">
-          <ul>
-            <a href="#">
-              <li>Compte</li>
-            </a>
-            <a href="../Fonctions/Deconnexion.php">
-              <li>Déconnexion</li>
-            </a>
-          </ul>
-        </div>
-      </i>
-      <div class="nav__toggle" id="nav-toggle">
-        <i class="ri-menu-line"></i>
-      </div>
-    </div>
-  </nav>
-</header>
-
 <!--==================== SEARCH ====================-->
 <div class="search" id="search">
   <form action="" class="search__form">

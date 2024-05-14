@@ -7,6 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="Accueil.css">
 </head>
+<?php
+include '../Annexes/header.php';
+?>
 <style>
     body,
     html {

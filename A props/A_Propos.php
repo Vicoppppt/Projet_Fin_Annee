@@ -19,6 +19,9 @@
    <title>Boop Adventure | A propos</title>
 </head>
 
+<?php
+include '../Annexes/header.php';
+/*
 <header class="header" id="header">
    <nav class="nav container">
    <a href="#" class="nav__logo" style="font-family:'Bauhaus 93', sans-serif; font-size:x-large;  letter-spacing: 0px;">BOOP ADVENTURE</a>
@@ -71,6 +74,8 @@
       </div>
    </nav>
 </header>
+*/
+?>
 
 <!--==================== SEARCH ====================-->
 <div class="search" id="search">
@@ -118,7 +123,6 @@
 
 <?php
 
-session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'root', 'root');
 
 
