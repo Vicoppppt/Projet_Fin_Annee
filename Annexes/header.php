@@ -18,7 +18,9 @@
                     echo '<li class="nav__item"><a href="../Unreal Engine/Unreal.php" class="nav__link">Unreal</a></li>';
                 }
 
-                echo '<li class="nav__item"><a href="#" class="nav__link">Le Jeu</a></li>';
+                if (basename($_SERVER['PHP_SELF']) !== 'Boutique.php') {
+                    echo '<li class="nav__item"><a href="../Boutique tets/Boutique.php" class="nav__link">Le Jeu</a></li>';
+                }
 
                 echo '<li class="nav__item"><a href="#" class="nav__link">Boutique</a></li>';
             ?>
