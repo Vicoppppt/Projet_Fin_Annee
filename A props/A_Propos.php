@@ -21,7 +21,7 @@
 
 <header class="header" id="header">
    <nav class="nav container">
-      <a href="#" class="nav__logo">Logo</a>
+   <a href="#" class="nav__logo" style="font-family:'Bauhaus 93', sans-serif; font-size:x-large;  letter-spacing: 0px;">BOOP ADVENTURE</a>
 
       <div class="nav__menu" id="nav-menu">
          <ul class="nav__list">
@@ -38,7 +38,7 @@
             </li>
 
             <li class="nav__item">
-               <a href="#" class="nav__link">Téléchargement</a>
+               <a href="#" class="nav__link">Le Jeu</a>
             </li>
 
             <li class="nav__item">

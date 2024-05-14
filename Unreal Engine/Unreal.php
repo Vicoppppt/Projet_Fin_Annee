@@ -27,7 +27,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'root
 ?>
 <header class="header" id="header">
   <nav class="nav container">
-    <a href="#" class="nav__logo">Logo</a>
+    <a href="#" class="nav__logo" style="font-family:'Bauhaus 93', sans-serif; font-size:x-large;  letter-spacing: 0px;">BOOP ADVENTURE</a>
 
     <div class="nav__menu" id="nav-menu">
       <ul class="nav__list">
@@ -44,7 +44,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'root
         </li>
 
         <li class="nav__item">
-          <a href="#" class="nav__link">Téléchargement</a>
+          <a href="#" class="nav__link">Le Jeu</a>
         </li>
 
         <li class="nav__item">
@@ -58,7 +58,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'root
     </div>
 
     <div class="nav__actions">
-      <i class="ri-search-line nav__search" id="search-btn"></i>
+      <i class="ri-shopping-cart-line nav__search" id="search-btn"></i>
       <i class="ri-user-line nav__login" id="login-btn">
         <div class="bulle" id="bulle">
           <ul>
@@ -81,7 +81,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'root
 <!--==================== SEARCH ====================-->
 <div class="search" id="search">
   <form action="" class="search__form">
-    <i class="ri-search-line search__icon"></i>
+    <i class="ri-shopping-cart search__icon"></i>
     <input type="search" placeholder="What are you looking for?" class="search__input">
   </form>
 
