@@ -58,7 +58,7 @@
         </div>
         <div class="section">
             <h2>Section 2</h2>
-            <p>Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
+            <p>The game must answer some critera. First, it mjust be a reflecion/deduction game with pre-build levels. Each part of the game must have a winning outcome, avoiding parameters of luck, speed of execution or even memorization. The game must include two level editors: a manual editor (in C or on a web interface) allowing you to build a level from scratch and a semi-automatic editor (in C only) which randomly generates a level using a few data entered beforehand.</p>
         </div>
         <div class="section">
             <h2>Section 3</h2>
