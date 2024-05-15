@@ -11,7 +11,14 @@
 <style>
     body {
         background-color: black;
+        overflow: hidden;
     }
+
+    html {
+        cursor: url("../Annexes/cursor.png"), default;
+        cursor: url("../Annexes/Pointer.png"), pointer;
+    }
+
 </style>
 
 <body>
@@ -63,6 +70,9 @@
         <script src="../Navigation_Footer/Navigation.js"></script>
     </div>
     <script type="module">
+        window.onload = function() {
+    window.scrollTo(0, 0);
+}
 
 // import kaboom.js
 import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
@@ -71,7 +81,7 @@ import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
 kaboom({
 	// Scale the whole game up
 	scale: 4,
-    background: [141, 183, 255],
+    background: [0, 0, 0],
 	// Set the default font
 	font: "monospace",
 })
@@ -102,13 +112,14 @@ loadSprite("dino", "https://kaboomjs.com/examples/sprites/dino.png", {
 })
 
 const SPEED = 120
-const JUMP_FORCE = 240
+const JUMP_FORCE = 500
 
 setGravity(640)
 
 // Add our player character
 const player = add([
 	sprite("dino"),
+    offscreen({ destroy: true }),
 	pos(center()),
 	anchor("center"),
 	area(),
@@ -120,12 +131,41 @@ player.play("idle")
 
 // Add a platform
 add([
-	rect(width(), 24),
+	rect(400, 24),
 	area(),
 	outline(1),
 	pos(0, height() - 40),
 	body({ isStatic: true }),
 ])
+
+add([
+	rect(400, 24),
+	area(),
+	outline(1),
+	pos(0, -28),
+	body({ isStatic: true }),
+    "toit",
+    color(rgb(0,0,0)),
+])
+
+add([
+	rect(100, 5),
+	area(),
+	outline(1),
+	pos(40, 80),
+	body({ isStatic: true }),
+])
+
+add([
+	rect(24, 300),
+	area(),
+	outline(1),
+	pos(-25, -150),
+	body({ isStatic: true }),
+    color(rgb(0,0,0)),
+])
+
+
 
 // Switch to "idle" or "run" animation when player hits ground
 player.onGround(() => {
@@ -174,6 +214,12 @@ onKeyDown("right", () => {
 		}
 	})
 })
+
+player.onCollide("toit", () => {
+	shake(10);
+})
+
+
 
 </script>
 </body>
