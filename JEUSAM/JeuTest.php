@@ -56,7 +56,7 @@ function cree_arbre_bi($nbr_etage){
         array_push($arbre,new Noeuds(0, rand(0, 1)));  
       }
       else{
-      array_push($arbre,creer_noeud_aleatoire());
+      array_push($arbre,new Noeuds(rand(1,4), rand(0, 1)));
       }
     }
   }
@@ -64,5 +64,5 @@ function cree_arbre_bi($nbr_etage){
 }
 
 
-print_a(cree_arbre_bi(5));
+print_a(cree_arbre_bi(4));
 ?>
