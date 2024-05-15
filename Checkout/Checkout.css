@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+     box-sizing: border-box;
+    padding: 0;
+     margin: 0;
+    font-family: "Syne", sans-serif;
+
+}
+
+body {
+    background-color: rgb(60, 60, 60);
+}
+
+#main {
+    background-color: rgb(60, 60, 60);
+    margin: 10vw;
+    height: 50vh;
+    border-radius: 100px;
+    box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    position: relative;
+    text-align: center;
+}
+
+#main::before, #main::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #ffffff, rgb(60, 60, 60), rgb(60, 60, 60), #ffffff, rgb(60, 60, 60), rgb(60, 60, 60));
+    border-radius: 100px;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.02);
+    z-index: -1;
+    background-size: 500%;
+    animation: animate 15s infinite;
+}
+
+#main::after {
+    filter: blur(20px);
+}
+
+@keyframes animate {
+    0% { background-position: 0 0; }
+    50% { background-position: 300% 0; }
+    100% { background-position: 0 0; }
+}
+
+h1 {
+    color: white;
+}
+
+@media (max-width: 1045px) {
+    
+}
+  
+@media (max-width: 702px) {
+
+}
