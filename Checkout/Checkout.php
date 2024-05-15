@@ -144,9 +144,14 @@
     });
   </script>
 
-    <div id="main">
-        <h1>Payement</h1>
+  <div id="main">
+    <h1>Payement</h1>
+    <h5>Credit card only</h5>
+
+    <div class="formulaire">
+      
     </div>
+  </div>
 
 </body>
 
