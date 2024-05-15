@@ -110,6 +110,10 @@ $counter = $_SESSION['Mail'];
 ?>
 
 <script type="text/javascript">
+
+window.onload = function() {
+    window.scrollTo(0, 0);
+}
     var count = <?php echo json_encode($counter); ?>;
 
     document.addEventListener("DOMContentLoaded", function() {
