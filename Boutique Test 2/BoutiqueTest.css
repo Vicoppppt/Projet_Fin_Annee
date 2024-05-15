@@ -1,4 +1,5 @@
 body {
+    position: relative;
     margin: 0;
     font-family: "Syne", sans-serif;
     background-color: gray;
@@ -48,12 +49,11 @@ body {
 
 .listProduct .item img {
     width: 90%;
-    filter: drop-shadow(0 50px 20px #0009);
 }
 
 .listProduct {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -181,4 +181,100 @@ body.showCart .containerShop {
     .listProduct {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+::selection {
+    background: rgba(23, 162, 184, 0.3);
+}
+
+.wrapper__Vico {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 5vh;
+}
+
+.wrapper__Vico .box__Vico {
+    max-width: 500px;
+    background: #fff;
+    width: calc(33% - 10px);
+    padding: 25px;
+    border-radius: 3px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.wrapper__Vico .box__Vico i.quote__Vico {
+    font-size: 20px;
+    color: #17a2b8;
+}
+
+.wrapper__Vico .box__Vico .content__Vico {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.box__Vico .info__Vico .name__Vico {
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.box__Vico .info__Vico .job__Vico {
+    font-size: 16px;
+    font-weight: 500;
+    color: #17a2b8;
+}
+
+.box__Vico .info__Vico .stars__Vico {
+    margin-top: 2px;
+}
+
+.box__Vico .info__Vico .stars__Vico i {
+    color: #17a2b8;
+}
+
+.box__Vico .content__Vico .image__Vico {
+    height: 75px;
+    width: 75px;
+    padding: 3px;
+    background: #17a2b8;
+    border-radius: 50%;
+}
+
+.content__Vico .image__Vico img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.box__Vico:hover .content__Vico .image__Vico img {
+    border-color: #fff;
+}
+
+@media (max-width: 1045px) {
+    .wrapper__Vico .box__Vico {
+        width: calc(50% - 10px);
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 702px) {
+    .wrapper__Vico .box__Vico {
+        width: 100%;
+    }
+}
+
+.Avis {
+    display: grid;
+    place-items: center;
+}
+
+#Gauche {
+    position: absolute;
+    top: 20vh;
 }
