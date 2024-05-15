@@ -1,68 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
 <?php
 
-function print_a($ar) {
-    foreach ($ar as $s) {
-        $s->afficher(); // Appelle la méthode afficher() pour chaque objet
+  class Noeud {
+      public $valeur ;
+      public $enfant_g;
+      public $enfant_d;
+      public $parent;
+
+      public function __construct($valeur) {
+          $this->valeur = $valeur;
+          $this->enfant_g = null;
+          $this->enfant_d = null;
+          $this->parent = null;
+      }
+
+      public function ajouterEnfantGauche(Noeud $enfant) {
+          $this->enfant_g = $enfant;
+          $enfant->parent = $this;
+      }
+
+      public function ajouterEnfantDroit(Noeud $enfant) {
+          $this->enfant_d = $enfant;
+          $enfant->parent = $this;
+      }
+
+      public function afficherParNiveau() {
+        $queue = [];
+        array_push($queue, $this);
+
+        while (!empty($queue)) {
+            $noeud = array_shift($queue);
+            echo $noeud->valeur . " ";
+
+            if ($noeud->enfant_g !== null) {
+                array_push($queue, $noeud->enfant_g);
+            }
+            if ($noeud->enfant_d !== null) {
+                array_push($queue, $noeud->enfant_d);
+            }
+        }
+        echo "\n";
     }
-}
-
-class Noeuds {
-    public $type;  // 0 lumiere, 1 OR , 2 AND , 3 XOR , 4 NOT
-    public $etat;
-    public $enfants; // Propriété pour stocker les enfants du nœud
-
-    public function __construct($type, $etat) {
-        $this->type = $type;
-        $this->etat = $etat;
-        $this->enfants = array(); // Initialisation de la propriété enfants comme un tableau vide
-    }
-
-    public function afficher() {
-        echo "Type: $this->type, État: $this->etat <br>";
-    }
-}
-
-
-function creer_noeud_aleatoire() {
-  // Générer un type aléatoire entre 0 et 4
-  $type_aleatoire = rand(0, 4);
-  
-  // Générer un état aléatoire (pour l'exemple, choisissons 0 ou 1)
-  $etat_aleatoire = rand(0, 1);
-
-  // Créer un nouvel objet Noeuds avec le type et l'état aléatoires
-  $nouveau_noeud = new Noeuds($type_aleatoire, $etat_aleatoire);
-  
-  return $nouveau_noeud;
-}
-
-function cree_arbre_bi($nbr_etage){
-  if ($nbr_etage==0){
-    
-    return array(creer_noeud_aleatoire());
-  }
-
-  
-  $arbre = array(creer_noeud_aleatoire());
-  
-  for ($j = 1;$j<=$nbr_etage;$j++){
-    for ($i=1;$i<=2**$j;$i++){
       
-      if( $j == $nbr_etage){
-        array_push($arbre,new Noeuds(0, rand(0, 1)));  
-      }
-      else{
-      array_push($arbre,new Noeuds(rand(1,4), rand(0, 1)));
-      }
-    }
   }
-  return $arbre;
-}
 
+  // Exemple d'utilisation
+  $racine = new Noeud(1);
+  $noeud2 = new Noeud(2);
+  $noeud3 = new Noeud(3);
+  $noeud4 = new Noeud(4);
+  $noeud5 = new Noeud(5);
 
-print_a(cree_arbre_bi(4));
+  $racine->ajouterEnfantGauche($noeud2);
+  $racine->ajouterEnfantDroit($noeud3);
+  $noeud2->ajouterEnfantGauche($noeud4);
+  $noeud2->ajouterEnfantDroit($noeud5);
+
+  $racine->afficherParNiveau();
 ?>
