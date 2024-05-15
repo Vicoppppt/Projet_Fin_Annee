@@ -175,12 +175,12 @@ $counter = $_SESSION['Mail'];
    <div class="Isen">
       <h1>Nos études</h1>
       <div class="IsenCon">
-         <div style="display:flex; flex-direction: column; width:50%;">
+         <div style="display:flex; flex-direction: column; width:45%;">
             <img src="../Annexes/IsenLogo.png">
             <h2>"Nos études se déroulent à JUNIA Isen, une grande école d'inégnieur<br><br> L’ISEN est un programme de JUNIA, grande école d'ingénieurs. Avec une expertise reconnue depuis plus de 60 ans, JUNIA ISEN forme des ingénieurs aux métiers d’avenir du numérique à Lille et Bordeaux."</h2>
             <a class="button" href="https://junia.isen.fr/" target="_blank">Visiter le site JUNIA ISEN</a>
          </div>
-         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5061.236572351682!2d3.046185476959151!3d50.63420747411537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d578da129f7d%3A0xd134d73fb7f4c699!2sJunia%20ISEN%20Lille!5e0!3m2!1sfr!2sfr!4v1715434412249!5m2!1sfr!2sfr" width="450" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5061.236572351682!2d3.046185476959151!3d50.63420747411537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d578da129f7d%3A0xd134d73fb7f4c699!2sJunia%20ISEN%20Lille!5e0!3m2!1sfr!2sfr!4v1715434412249!5m2!1sfr!2sfr" width="410" height="350" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
    </div>
 

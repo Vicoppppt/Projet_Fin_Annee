@@ -1,68 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
 <?php
+  class Noeud {
+      public $valeur;
+      public $etat;
+      public $enfant_g;
+      public $enfant_d;
+      public $parent;
 
-function print_a($ar) {
-    foreach ($ar as $s) {
-        $s->afficher(); // Appelle la méthode afficher() pour chaque objet
-    }
-}
+      public function __construct($valeur) {
+          $this->valeur = $valeur;
+          $this->etat = rand(0, 1);
+          $this->enfant_g = null;
+          $this->enfant_d = null;
+          $this->parent = null;
+      }
 
-class Noeuds {
-    public $type;  // 0 lumiere, 1 OR , 2 AND , 3 XOR , 4 NOT
-    public $etat;
-    public $enfants; // Propriété pour stocker les enfants du nœud
+      public function ajouterEnfantGauche(Noeud $enfant) {
+          $this->enfant_g = $enfant;
+          $enfant->parent = $this;
+      }
 
-    public function __construct($type, $etat) {
-        $this->type = $type;
-        $this->etat = $etat;
-        $this->enfants = array(); // Initialisation de la propriété enfants comme un tableau vide
-    }
+      public function ajouterEnfantDroit(Noeud $enfant) {
+          $this->enfant_d = $enfant;
+          $enfant->parent = $this;
+      }
 
-    public function afficher() {
-        echo "Type: $this->type, État: $this->etat <br>";
-    }
-}
+      public function ajouterParent(Noeud $parent) {
+          $this->parent = $parent;
+      }
 
-
-function creer_noeud_aleatoire() {
-  // Générer un type aléatoire entre 0 et 4
-  $type_aleatoire = rand(0, 4);
-  
-  // Générer un état aléatoire (pour l'exemple, choisissons 0 ou 1)
-  $etat_aleatoire = rand(0, 1);
-
-  // Créer un nouvel objet Noeuds avec le type et l'état aléatoires
-  $nouveau_noeud = new Noeuds($type_aleatoire, $etat_aleatoire);
-  
-  return $nouveau_noeud;
-}
-
-function cree_arbre_bi($nbr_etage){
-  if ($nbr_etage==0){
-    
-    return array(creer_noeud_aleatoire());
-  }
-
-  
-  $arbre = array(creer_noeud_aleatoire());
-  
-  for ($j = 1;$j<=$nbr_etage;$j++){
-    for ($i=1;$i<=2**$j;$i++){
+      public function def_etat(){
+        
+        if ($this->type == 1) { // AND
+            if ($this->enfant_g !== null && $this->enfant_d !== null) {
+                if ($this->enfant_g->etat == 1 && $this->enfant_d->etat == 1) {
+                    $this->etat = 1;
+                } else {
+                    $this->etat = 0;
+                }
+            }
+        } 
+        elseif ($this->type == 2) { // OR
+            if ($this->enfant_g !== null && $this->enfant_d !== null) {
+                if ($this->enfant_g->etat == 1 || $this->enfant_d->etat == 1) {
+                    $this->etat = 1;
+                } else {
+                    $this->etat = 0;
+                }
+            }
+        } 
+        elseif ($this->type == 3) { // XOR
+            if ($this->enfant_g !== null && $this->enfant_d !== null) {
+                if ($this->enfant_g->etat != $this->enfant_d->etat) {
+                    $this->etat = 1;
+                } else {
+                    $this->etat = 0;
+                }
+            }
+        } 
+         elseif ($this->type == 4) { // NOT
+            if ($this->enfant_g !== null && $this->enfant_d !== null) {
+                if ($this->enfant_g->etat == 0 && $this->enfant_d->etat == 0) {
+                    $this->etat = 1;
+                } else {
+                    $this->etat = 0;
+                }
+            }
+        }
+      }
       
-      if( $j == $nbr_etage){
-        array_push($arbre,new Noeuds(0, rand(0, 1)));  
-      }
-      else{
-      array_push($arbre,new Noeuds(rand(1,4), rand(0, 1)));
-      }
+      public function inverserEtat() {
+        $this->etat = ($this->etat == 0) ? 1 : 0;
     }
+
   }
-  return $arbre;
-}
 
+  class Arbre {
+      public $racine;
 
-print_a(cree_arbre_bi(4));
+      public function cree_arbre($hauteur, $est_racine = true) {
+        if ($hauteur == 0) {
+            // Si la hauteur est 0, retourne une feuille avec la valeur 0 et l'état 0
+            return new Noeud(0);
+        }
+    
+        // Crée un nœud avec une valeur aléatoire entre 1 et 4 pour les nœuds autres que la racine
+        $valeur = ($est_racine) ? rand(1, 4) : rand(1, 4);
+        
+        // L'état de la racine doit toujours être 0
+        $etat = ($est_racine) ? 0 : rand(0, 1);
+    
+        $noeud = new Noeud($valeur);
+        $noeud->etat = $etat; // Définit l'état du nœud
+    
+        // Crée les enfants récursivement avec une hauteur diminuée
+        $noeud->enfant_g = $this->cree_arbre($hauteur - 1, false);
+        $noeud->enfant_d = $this->cree_arbre($hauteur - 1, false);
+    
+        return $noeud;
+    }
+
+      public function affiche() {
+          // Si la racine est null, rien à afficher
+          if ($this->racine === null) {
+              return;
+          }
+
+          $niveau_actuel = [$this->racine]; // Niveau actuel de l'arbre
+          $niveau_suivant = []; // Niveau suivant de l'arbre
+
+          while (!empty($niveau_actuel)) {
+              foreach ($niveau_actuel as $noeud) {
+                  echo $noeud->valeur . "(" . $noeud->etat . ") "; // Affiche la valeur du nœud
+                  if ($noeud->enfant_g !== null) {
+                      $niveau_suivant[] = $noeud->enfant_g; // Ajoute l'enfant gauche au niveau suivant
+                  }
+                  if ($noeud->enfant_d !== null) {
+                      $niveau_suivant[] = $noeud->enfant_d; // Ajoute l'enfant droit au niveau suivant
+                  }
+              }
+              echo "\n"; // Passage à la ligne pour le prochain niveau
+              $niveau_actuel = $niveau_suivant; // Met à jour le niveau actuel avec le niveau suivant
+              $niveau_suivant = []; // Réinitialise le niveau suivant
+          }
+      }
+  
+      public function end() {
+        return $this->racine->etat;
+      }
+
+    }
+  
+
+  // Exemple d'utilisation
+  $arbre = new Arbre();
+  $arbre->racine = $arbre->cree_arbre( 3); // Crée un arbre avec 3 étages
+  $arbre->affiche(); // Affiche l'arbre par niveau
+  $end = $arbre->end();
+  echo"$end";
 ?>

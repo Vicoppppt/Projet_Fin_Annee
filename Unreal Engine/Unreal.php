@@ -25,7 +25,25 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'root
 <div class="search" id="search">
   <form action="" class="search__form">
     <i class="ri-shopping-cart search__icon"></i>
-    <input type="search" placeholder="What are you looking for?" class="search__input">
+    <div class="Achats">
+      <h1>Mes Achats</h1>
+      <article>
+        zjdai
+      </article>
+      <article>
+        zjdai
+      </article>
+      <article>
+        zjdai
+      </article>
+      <article>
+        zjdai
+      </article>
+      <article>
+        zjdai
+      </article>
+
+    </div>
   </form>
 
   <i class="ri-close-line search__close" id="search-close"></i>
@@ -92,46 +110,64 @@ $counter = $_SESSION['Mail'];
 ?>
 
 <script type="text/javascript">
-  var count = <?php echo json_encode($counter); ?>;
+    var count = <?php echo json_encode($counter); ?>;
 
-  document.addEventListener("DOMContentLoaded", function() {
-    var timer;
-    var bulle = document.getElementById("bulle");
-    var loginBtn = document.getElementById("login-btn");
+    document.addEventListener("DOMContentLoaded", function() {
+      var timer;
+      var timer2;
+      var bulle = document.getElementById("bulle");
+      var loginBtn = document.getElementById("login-btn");
+      var bulleCart = document.getElementById("bulleCart");
+      var CartBtn = document.getElementById("search-btn");
 
-    function showMenu() {
-      clearTimeout(timer);
-      bulle.classList.add("active");
-    }
+      function showMenu() {
+        clearTimeout(timer);
+        bulle.classList.add("active");
+      }
 
-    function hideMenu() {
-      timer = setTimeout(function() {
-        bulle.classList.remove("active");
-      }, 100); // Délai de 1 seconde (1000 millisecondes)
-    }
+      function showCart() {
+        clearTimeout(timer2);
+        bulleCart.classList.add("active");
+      }
 
-    loginBtn.addEventListener('mouseenter', function() {
-      if (count != null) {
+      function hideMenu() {
+        timer = setTimeout(function() {
+          bulle.classList.remove("active");
+        }, 100); // Délai de 1 seconde (1000 millisecondes)
+      }
+
+      function hideCart() {
+        timer2 = setTimeout (function () {
+            bulleCart.classList.remove("active");
+        }, 100);
+      }
+
+      CartBtn.addEventListener('mouseleave', function() {
+        hideCart()
+      })
+
+      loginBtn.addEventListener('mouseenter', function() {
+        if (count != null) {
+          showMenu()
+        }
+      });
+
+      loginBtn.addEventListener('mouseleave', function() {
+        hideMenu()
+      });
+
+      bulle.addEventListener('mouseenter', function() {
         showMenu();
-      }
-    });
+      });
 
-    loginBtn.addEventListener('mouseleave', function() {
-      hideMenu();
-    });
+      loginBtn.addEventListener('click', function() {
 
-    bulle.addEventListener('mouseenter', function() {
-      showMenu();
+        if (count == null) {
+          login.classList.add('show-login');
+        }
+      });
     });
-
-    loginBtn.addEventListener('click', function() {
-
-      if (count == null) {
-        login.classList.add('show-login');
-      }
-    });
-  });
-</script>
+  </script>
 
 
 <body>

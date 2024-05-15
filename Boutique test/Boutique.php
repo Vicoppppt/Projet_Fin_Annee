@@ -60,24 +60,23 @@
   </div>
 
   <?php
-
-
+  
   $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'root', 'root');
 
 
   if (isset($_POST['Envoyer'])) {
     if (!empty($_POST['Mail']) and !empty($_POST['Password'])) {
-      $Mail = htmlspecialchars($_POST['Mail']);
-      $Password = ($_POST['Password']);
+        $Mail = htmlspecialchars($_POST['Mail']);
+        $Password = ($_POST['Password']);
 
 
-      $Utilisateur = $bdd->prepare('SELECT * FROM clients WHERE Mail = ? AND Passwords = ?');
-      $Utilisateur->execute(array($Mail, $Password));
-      if ($Utilisateur->rowCount() > 0) {
-        $_SESSION['Mail'] = $Mail;
-        $_SESSION['Password'] = $Password;
-      } else {
-      }
+        $Utilisateur = $bdd->prepare('SELECT * FROM clients WHERE Mail = ? AND Passwords = ?');
+        $Utilisateur->execute(array($Mail, $Password));
+        if ($Utilisateur->rowCount() > 0) {
+          $_SESSION['Mail'] = $Mail;
+          $_SESSION['Password'] = $Password;
+        } else {
+        }
     }
   }
 
@@ -92,26 +91,39 @@
       var timer;
       var bulle = document.getElementById("bulle");
       var loginBtn = document.getElementById("login-btn");
+      var bulleCart = document.getElementById("bulleCart");
+      var CartBtn = document.getElementById("Cart");
 
       function showMenu() {
         clearTimeout(timer);
         bulle.classList.add("active");
       }
 
+      function showCart() {
+        clearTimeout(timer2);
+        bulleCart.classList.add("active");
+      }
+
       function hideMenu() {
         timer = setTimeout(function() {
           bulle.classList.remove("active");
-        }, 100); // Délai de 1 seconde (1000 millisecondes)
+        }, 50); // Délai de 1 seconde (1000 millisecondes)
+      }
+
+      function hideCart() {
+        timer2 = setTimeout (function () {
+            bulleCart.classList.remove("active");
+        }, 50);
       }
 
       loginBtn.addEventListener('mouseenter', function() {
         if (count != null) {
-          showMenu();
+          showMenu()
         }
       });
 
       loginBtn.addEventListener('mouseleave', function() {
-        hideMenu();
+        hideMenu()
       });
 
       bulle.addEventListener('mouseenter', function() {
@@ -119,9 +131,14 @@
       });
 
       loginBtn.addEventListener('click', function() {
-
         if (count == null) {
           login.classList.add('show-login');
+        }
+      });
+
+      CartBtn.addEventListener('click', function() {
+        if (count != null) {
+          showCart();
         }
       });
     });
@@ -142,7 +159,11 @@
       <i class="ri-star-line"></i>
       <i class="ri-star-line"></i> (230 avis)
       <p class="Nom">Peluche Boop</p>
-      <i class="ri-shopping-cart-line" id="Cart" style="color: black;"></i>
+      <form method="post" action="">
+        <button>
+        <i class="ri-shopping-cart-line" id="Cart" style="color: black; cursor: pointer;"></i>
+        </button>
+      </form>
       <p class="Prix">2$99</p>
     </article>
     <article>
@@ -153,7 +174,11 @@
       <i class="ri-star-line"></i>
       <i class="ri-star-line"></i> (230 avis)
       <p class="Nom">Peluche Boop</p>
-      <i class="ri-shopping-cart-line" id="Cart" style="color: black;"></i>
+      <form method="post" action="">
+        <button>
+        <i class="ri-shopping-cart-line" id="Cart" style="color: black; cursor: pointer;"></i>
+        </button>
+      </form>
       <p class="Prix">2$99</p>
     </article>
     <article>
@@ -164,7 +189,11 @@
       <i class="ri-star-line"></i>
       <i class="ri-star-line"></i> (230 avis)
       <p class="Nom">Peluche Boop</p>
-      <i class="ri-shopping-cart-line" id="Cart" style="color: black;"></i>
+      <form method="post" action="">
+        <button>
+        <i class="ri-shopping-cart-line" id="Cart" style="color: black; cursor: pointer;"></i>
+        </button>
+      </form>
       <p class="Prix">2$99</p>
     </article>
     <article>
@@ -175,7 +204,11 @@
       <i class="ri-star-line"></i>
       <i class="ri-star-line"></i> (230 avis)
       <p class="Nom">Peluche Boop</p>
-      <i class="ri-shopping-cart-line" id="Cart" style="color: black;"></i>
+      <form method="post" action="">
+        <button>
+        <i class="ri-shopping-cart-line" id="Cart" style="color: black; cursor: pointer;"></i>
+        </button>
+      </form>
       <p class="Prix">2$99</p>
     </article>
   </div>
@@ -195,7 +228,11 @@
       <i class="ri-star-line"></i>
       <i class="ri-star-line"></i> (230 avis)
       <p class="Nom">Peluche Boop</p>
-      <i class="ri-shopping-cart-line" id="Cart" style="color: black;"></i>
+      <form method="post" action="">
+        <button>
+            <i class="ri-shopping-cart-line" id="Cart" style="color: black; cursor: pointer;"></i>
+        </button>
+      </form>
       <p class="Prix">2$99</p>
     </article>
     <article>
@@ -206,7 +243,11 @@
       <i class="ri-star-line"></i>
       <i class="ri-star-line"></i> (230 avis)
       <p class="Nom">Peluche Boop</p>
-      <i class="ri-shopping-cart-line" id="Cart" style="color: black;"></i>
+      <form method="post" action="">
+        <button>
+        <i class="ri-shopping-cart-line" id="Cart" style="color: black; cursor: pointer;"></i>
+        </button>
+      </form>
       <p class="Prix">2$99</p>
     </article>
     <article>
@@ -217,7 +258,11 @@
       <i class="ri-star-line"></i>
       <i class="ri-star-line"></i> (230 avis)
       <p class="Nom">Peluche Boop</p>
-      <i class="ri-shopping-cart-line" id="Cart" style="color: black;"></i>
+      <form method="post" action="">
+        <button>
+        <i class="ri-shopping-cart-line" id="Cart" style="color: black; cursor: pointer;"></i>
+        </button>
+      </form>
       <p class="Prix">2$99</p>
     </article>
     <article>
@@ -228,7 +273,11 @@
       <i class="ri-star-line"></i>
       <i class="ri-star-line"></i> (230 avis)
       <p class="Nom">Peluche Boop</p>
-      <i class="ri-shopping-cart-line" id="Cart" style="color: black;"></i>
+      <form method="post" action="">
+        <button>
+        <i class="ri-shopping-cart-line" id="Cart" style="color: black; cursor: pointer;"></i>
+        </button>
+      </form>
       <p class="Prix">2$99</p>
     </article>
   </div>
