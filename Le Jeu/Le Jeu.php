@@ -81,7 +81,7 @@ import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
 kaboom({
 	// Scale the whole game up
 	scale: 4,
-    background: [0, 0, 0],
+    background: [0,0,0],
 	// Set the default font
 	font: "monospace",
 })
@@ -219,6 +219,33 @@ player.onCollide("toit", () => {
 	shake(10);
 })
 
+const effects = {
+	crt: () => ({
+		"u_flatness": 3,
+	}),
+	vhs: () => ({
+		"u_intensity": 12,
+	}),
+	pixelate: () => ({
+		"u_resolution": vec2(width(), height()),
+		"u_size": wave(2, 16, time() * 2),
+	}),
+	invert: () => ({
+		"u_invert": 1,
+	}),
+	light: () => ({
+		"u_radius": 64,
+		"u_blur": 64,
+		"u_resolution": vec2(width(), height()),
+		"u_mouse": mousePos(),
+	}),
+}
+
+for (const effect in effects) {
+	loadShaderURL(effect, null, `https://kaboomjs.com/examples/shaders/${effect}.frag`)
+}
+
+let curEffect = 0
 
 
 </script>
