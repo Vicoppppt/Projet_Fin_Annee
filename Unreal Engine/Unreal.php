@@ -1,9 +1,6 @@
 <?php
 include '../Annexes/header.php';
 require('../Fonctions/Fonctions.php');
-
-$bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'root', 'root');
-
 ?>
 
 
@@ -65,36 +62,24 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'root
 </div>
 
 <?php
+
 Connexion();
-IssetConnexion();
+
+if(isset($_SESSION['Mail'])){
+  $counter = $_SESSION['Mail'];
+} else {
+  $counter=null;
+}
+
 ?>
 
 <script type="text/javascript">
-  window.onload = function() {
-    window.scrollTo(0, 0);
-  }
-
   var count = <?php echo json_encode($counter); ?>;
-
-
 
   document.addEventListener("DOMContentLoaded", function() {
     var timer;
-    var timer2;
     var bulle = document.getElementById("bulle");
     var loginBtn = document.getElementById("login-btn");
-    var bulleCart = document.getElementById("bulleCart");
-    var CartBtn = document.getElementById("search-btn");
-
-    function showMenu() {
-      clearTimeout(timer);
-      bulle.classList.add("active");
-    }
-
-    function showCart() {
-      clearTimeout(timer2);
-      bulleCart.classList.add("active");
-    }
 
     function hideMenu() {
       timer = setTimeout(function() {
@@ -102,32 +87,15 @@ IssetConnexion();
       }, 100); // Délai de 1 seconde (1000 millisecondes)
     }
 
-    function hideCart() {
-      timer2 = setTimeout(function() {
-        bulleCart.classList.remove("active");
-      }, 100);
+    function showMenu() {
+      clearTimeout(timer);
+      bulle.classList.add("active");
     }
-
-    CartBtn.addEventListener('mouseleave', function() {
-      hideCart();
-    })
-
-    CartBtn.addEventListener('mouseenter', function() {
-      showCart();
-    })
 
     loginBtn.addEventListener('mouseenter', function() {
       if (count != null) {
         showMenu();
       }
-    });
-
-    loginBtn.addEventListener('mouseleave', function() {
-      hideMenu();
-    });
-
-    bulle.addEventListener('mouseenter', function() {
-      showMenu();
     });
 
     loginBtn.addEventListener('click', function() {

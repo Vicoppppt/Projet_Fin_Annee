@@ -127,7 +127,4 @@ function Connexion() {
 }
 
 function IssetConnexion(){
-  if(isset($_SESSION['Mail'])){
-    $counter = $_SESSION['Mail'];
-  }
 }

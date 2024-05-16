@@ -69,9 +69,12 @@ include '../Annexes/header.php';
 </div>
 
 <?php
-session_start();
 Connexion();
-IssetConnexion();
+if(isset($_SESSION['Mail'])){
+   $counter = $_SESSION['Mail'];
+ } else {
+   $counter=null;
+ }
 ?>
 
 <script type="text/javascript">
