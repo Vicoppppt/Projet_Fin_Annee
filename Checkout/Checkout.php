@@ -1,3 +1,6 @@
+<?php
+  require('../Fonctions/Fonctions.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +15,7 @@
 
 <body>
   <?php
-  include '../Annexes/header.php';
+  include '../Navigation_Footer/Navigation.php';
   ?>
 
   <!--==================== SEARCH ====================-->
@@ -60,28 +63,9 @@
   </div>
 
   <?php
-  
-  $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'root', 'root');
-
-
-  if (isset($_POST['Envoyer'])) {
-    if (!empty($_POST['Mail']) and !empty($_POST['Password'])) {
-        $Mail = htmlspecialchars($_POST['Mail']);
-        $Password = ($_POST['Password']);
-
-
-        $Utilisateur = $bdd->prepare('SELECT * FROM clients WHERE Mail = ? AND Passwords = ?');
-        $Utilisateur->execute(array($Mail, $Password));
-        if ($Utilisateur->rowCount() > 0) {
-          $_SESSION['Mail'] = $Mail;
-          $_SESSION['Password'] = $Password;
-        } else {
-        }
-    }
-  }
-
-  $counter = $_SESSION['Mail'];
-
+  session_start();
+  Connexion();
+  IssetConnexion();
   ?>
 
   <script type="text/javascript">
@@ -148,9 +132,48 @@
     <h1>Payement</h1>
     <h5>Credit card only</h5>
 
-    <div class="formulaire">
-      
-    </div>
+    <form methood="post" class="formulaire">
+      <label id="left" class="CARD">Credit Card Infos</label>
+      <label id="right" class="ADRESS">Adress</label>
+
+      <div id="left" class="num">
+        <p>Credit card number</p>
+        <input type="text" name="num" value="XXXX XXXX XXXX XXXX">
+      </div>
+      <div id="right" class="country">
+        <p>Country</p>
+        <input type="text" name="num" value="France">
+      </div>
+
+      <div id="left" class="crypto">
+        <p>Security cryptogram</p>
+        <input type="text" name="crypto" value="XXX">
+      </div>
+      <div id="right" class="cp">
+        <p>Postal code</p>
+        <input type="number" name="cp" value="59800">
+      </div>
+
+      <div id="left" class="date">
+        <p>Expiration date</p>
+        <input type="date" name="date">
+      </div>
+      <div id="right" class="city">
+        <p>City</p>
+        <input type="text" name="city" value="Lille">
+      </div>
+
+      <div id="left" class="name">
+        <p>Written name</p>
+        <input type="text" name="name" value="LAST NAME First name">
+      </div>
+      <div id="right" class="adress">
+        <p>Adress</p>
+        <input type="text" name="adress" value="41 Boulevard Vauban ">
+      </div>
+
+      <input type="submit">
+    </form>
   </div>
 
 </body>

@@ -1,4 +1,5 @@
 <?php
+include '../Navigation_Footer/Navigation.php';
 class Noeud {
     public $id ; 
     public $valeur;

@@ -14,3 +14,9 @@ closeCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
 })
 
+var image = document.getElementsByClassName('thumbnail');
+new simpleParallax(image, {
+  scale: 2,
+  delay: 2.6,
+  transition: 'cubic-bezier(0,0,0,1)'
+});

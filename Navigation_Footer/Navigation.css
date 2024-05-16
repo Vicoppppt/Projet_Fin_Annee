@@ -104,7 +104,7 @@ a {
 .search__close,
 .login__close {
     position: absolute;
-    top: 2rem;
+    top: 1vh;
     right: 2rem;
     font-size: 1.5rem;
     color: var(--title-color);
@@ -311,16 +311,6 @@ a {
 
 .bulleCart {
     display: none;
-    position: fixed;
-    transform: translateX(-90%);
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    transition: opacity 0.3s ease;
-}
-
-.bulle {
-    display: none;
     margin-top: 2vh;
     opacity: 1;
     cursor: pointer;
@@ -334,6 +324,45 @@ a {
 
 .bulleCart.active {
     display: block;
+}
+
+.bulleCart ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.bulleCart ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.7vh;
+    font-family: "Syne", sans-serif;
+
+}
+
+.bulleCart ul li {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.bulleCart ul li:hover {
+    background-color: gray;
+    transition: 0.3s ease;
+    border-radius: 3px;
+}
+
+.bulle {
+    display: none;
+    margin-top: 2vh;
+    opacity: 1;
+    cursor: pointer;
+    position: absolute;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
 }
 
 .bulle ul a {
@@ -372,13 +401,12 @@ a {
 
     .search,
     .login {
-        padding-top: 10rem;
+        padding-top: 10vh;
     }
 
     .search__close,
     .login__close {
         width: max-content;
-        top: 5rem;
         left: 0;
         right: 0;
         margin-inline: auto;
