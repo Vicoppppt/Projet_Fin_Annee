@@ -6,6 +6,11 @@ body {
   overflow-x: hidden;
 }
 
+html::-webkit-scrollbar {
+  width: 0.00001vw;
+}
+
+
 #Fond{
   position: absolute;
   top: 0;
