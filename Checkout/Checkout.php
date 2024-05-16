@@ -1,3 +1,6 @@
+<?php
+  require('../Fonctions/Fonctions.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,28 +63,9 @@
   </div>
 
   <?php
-  
-  $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'root', 'root');
-
-
-  if (isset($_POST['Envoyer'])) {
-    if (!empty($_POST['Mail']) and !empty($_POST['Password'])) {
-        $Mail = htmlspecialchars($_POST['Mail']);
-        $Password = ($_POST['Password']);
-
-
-        $Utilisateur = $bdd->prepare('SELECT * FROM clients WHERE Mail = ? AND Passwords = ?');
-        $Utilisateur->execute(array($Mail, $Password));
-        if ($Utilisateur->rowCount() > 0) {
-          $_SESSION['Mail'] = $Mail;
-          $_SESSION['Password'] = $Password;
-        } else {
-        }
-    }
-  }
-
-  $counter = $_SESSION['Mail'];
-
+  session_start();
+  Connexion();
+  IssetConnexion();
   ?>
 
   <script type="text/javascript">
