@@ -71,19 +71,19 @@ label {
     grid-template-rows: repeat(5, 10vh);
     grid-template-areas: "CARD ADRESS"
                          "num country"
-                         "crypto city"
-                         "date cp"
+                         "crypto cp"
+                         "date city"
                          "name adress";
-    row-gap: 10px;
-    column-gap: 0px;
 }
 
 #left {
     border-right: 1px solid white;
+    align-content: center;
 }
 
 #right {
     border-left: 1px solid white;
+    align-content: center;
 }
 
 .CARD {
@@ -96,34 +96,42 @@ label {
 
 .num {
     grid-area: num;
+    color: rgb(160, 160, 160);
 }
 
 .country {
     grid-area: country;
+    color: rgb(160, 160, 160);
 }
 
 .crypto {
     grid-area: crypto;
+    color: rgb(160, 160, 160);
 }
 
 .city {
     grid-area: city;
+    color: rgb(160, 160, 160);
 }
 
 .date {
     grid-area: date;
+    color: rgb(160, 160, 160);
 }
 
 .cp {
     grid-area: cp;
+    color: rgb(160, 160, 160);
 }
 
 .name {
     grid-area: name;
+    color: rgb(160, 160, 160);
 }
 
 .adress {
     grid-area: adress;
+    color: rgb(160, 160, 160);
 }
 
 @media (max-width: 1045px) {

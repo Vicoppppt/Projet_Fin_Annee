@@ -17,6 +17,9 @@ require('../Fonctions/Fonctions.php');
 </head>
 
 <body>
+<script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+
+    <img src="../Annexes/téléchargement.png" class="thumbnail" id="Fond">
     <div class="containerShop">
         <h1>Les Articles </h1>
         <div class="listProduct">

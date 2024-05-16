@@ -3,6 +3,16 @@ body {
   margin: 0;
   font-family: "Syne", sans-serif;
   background-color: gray;
+  overflow-x: hidden;
+}
+
+#Fond{
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: blur(3px);
+  z-index: -9;
+  height: 220vh;
 }
 
 .containerShop {
