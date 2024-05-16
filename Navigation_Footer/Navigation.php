@@ -23,7 +23,7 @@
                 }
 
                 if (basename($_SERVER['PHP_SELF']) !== 'Boutique.php') {
-                    echo '<li class="nav__item"><a href="../Boutique test/Boutique.php" class="nav__link">Boutique</a></li>';
+                    echo '<li class="nav__item"><a href="../Boutique/Boutique.php" class="nav__link">Boutique</a></li>';
                 }
                 ?>
             </ul>
@@ -42,7 +42,14 @@
             </i>';
             } else {
                 echo '<i class="ri-planet-line nav__search" id="search-btn">
-                <div class="bulleCart" id="bulleCart"></div>
+                <div class="bulleCart" id="bulleCart"><ul>
+                <a href="#">
+                    <li>Français</li>
+                </a>
+                <a href="../Fonctions/Deconnexion.php">
+                    <li>Anglais</li>
+                </a>
+            </ul></div>
             </i>';
 
             }

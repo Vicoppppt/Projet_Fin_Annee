@@ -1,5 +1,5 @@
 <?php
-include '../Annexes/header.php';
+include '../Navigation_Footer/Navigation.php';
 require('../Fonctions/Fonctions.php');
 
 $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'customer', 'customer');

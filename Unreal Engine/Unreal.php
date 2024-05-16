@@ -1,9 +1,6 @@
 <?php
-include '../Annexes/header.php';
+include '../Navigation_Footer/Navigation.php';
 require('../Fonctions/Fonctions.php');
-
-$bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'root', 'root');
-
 ?>
 
 
@@ -66,53 +63,23 @@ $bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'root
 
 <?php
 
+Connexion();
 
-$bdd = new PDO('mysql:host=localhost;dbname=boop_adventure;charset=utf8;', 'root', 'root');
-
-
-if (isset($_POST['Envoyer'])) {
-  if (!empty($_POST['Mail']) and !empty($_POST['Password'])) {
-    $Mail = htmlspecialchars($_POST['Mail']);
-    $Password = ($_POST['Password']);
-
-
-    $Utilisateur = $bdd->prepare('SELECT * FROM clients WHERE Mail = ? AND Passwords = ?');
-    $Utilisateur->execute(array($Mail, $Password));
-    if ($Utilisateur->rowCount() > 0) {
-      $_SESSION['Mail'] = $Mail;
-      $_SESSION['Password'] = $Password;
-    } else {
-    }
-  }
+if(isset($_SESSION['Mail'])){
+  $counter = $_SESSION['Mail'];
+} else {
+  $counter=null;
 }
-
-$counter = $_SESSION['Mail'];
 
 ?>
 
 <script type="text/javascript">
-  window.onload = function() {
-    window.scrollTo(0, 0);
-  }
   var count = <?php echo json_encode($counter); ?>;
 
   document.addEventListener("DOMContentLoaded", function() {
     var timer;
-    var timer2;
     var bulle = document.getElementById("bulle");
     var loginBtn = document.getElementById("login-btn");
-    var bulleCart = document.getElementById("bulleCart");
-    var CartBtn = document.getElementById("search-btn");
-
-    function showMenu() {
-      clearTimeout(timer);
-      bulle.classList.add("active");
-    }
-
-    function showCart() {
-      clearTimeout(timer2);
-      bulleCart.classList.add("active");
-    }
 
     function hideMenu() {
       timer = setTimeout(function() {
@@ -120,28 +87,15 @@ $counter = $_SESSION['Mail'];
       }, 100); // Délai de 1 seconde (1000 millisecondes)
     }
 
-    function hideCart() {
-      timer2 = setTimeout(function() {
-        bulleCart.classList.remove("active");
-      }, 100);
+    function showMenu() {
+      clearTimeout(timer);
+      bulle.classList.add("active");
     }
-
-    CartBtn.addEventListener('mouseleave', function() {
-      hideCart()
-    })
 
     loginBtn.addEventListener('mouseenter', function() {
       if (count != null) {
-        showMenu()
+        showMenu();
       }
-    });
-
-    loginBtn.addEventListener('mouseleave', function() {
-      hideMenu()
-    });
-
-    bulle.addEventListener('mouseenter', function() {
-      showMenu();
     });
 
     loginBtn.addEventListener('click', function() {
