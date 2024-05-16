@@ -34,10 +34,19 @@
         </div>
 
         <div class="nav__actions">
-            <i class="ri-shopping-cart-line nav__search" id="search-btn">
-                <div class="bulleCart" id="bulleCart">                    
-                </div>
-            </i>
+            <?php
+            
+            if (basename($_SERVER['PHP_SELF']) == 'Boutique.php') {
+                echo '<i class="ri-shopping-cart-line nav__search" id="search-btn">
+                <div class="bulleCart" id="bulleCart"></div>
+            </i>';
+            } else {
+                echo '<i class="ri-planet-line nav__search" id="search-btn">
+                <div class="bulleCart" id="bulleCart"></div>
+            </i>';
+
+            }
+            ?>
             <i class="ri-user-line nav__login" id="login-btn">
                 <div class="bulle" id="bulle">
                     <ul>

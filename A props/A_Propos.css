@@ -22,6 +22,11 @@
 }
 
 /*=============== BASE ===============*/
+
+html::-webkit-scrollbar {
+  width: 0.00001vw;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
