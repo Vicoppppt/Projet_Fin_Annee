@@ -104,7 +104,7 @@ a {
 .search__close,
 .login__close {
     position: absolute;
-    top: 2rem;
+    top: 1vh;
     right: 2rem;
     font-size: 1.5rem;
     color: var(--title-color);
