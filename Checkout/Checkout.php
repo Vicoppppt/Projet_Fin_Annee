@@ -135,7 +135,44 @@
     <form methood="post" class="formulaire">
       <label id="left" class="CARD">Credit Card Infos</label>
       <label id="right" class="ADRESS">Adress</label>
-      <input id="left" class="num" type="text" name="num"></input>
+
+      <div id="left" class="num">
+        <p>Credit card number</p>
+        <input type="text" name="num" value="XXXX XXXX XXXX XXXX">
+      </div>
+      <div id="right" class="country">
+        <p>Country</p>
+        <input type="text" name="num" value="France">
+      </div>
+
+      <div id="left" class="crypto">
+        <p>Security cryptogram</p>
+        <input type="text" name="crypto" value="XXX">
+      </div>
+      <div id="right" class="cp">
+        <p>Postal code</p>
+        <input type="number" name="cp" value="59800">
+      </div>
+
+      <div id="left" class="date">
+        <p>Expiration date</p>
+        <input type="date" name="date">
+      </div>
+      <div id="right" class="city">
+        <p>City</p>
+        <input type="text" name="city" value="Lille">
+      </div>
+
+      <div id="left" class="name">
+        <p>Written name</p>
+        <input type="text" name="name" value="LAST NAME First name">
+      </div>
+      <div id="right" class="adress">
+        <p>Adress</p>
+        <input type="text" name="adress" value="41 Boulevard Vauban ">
+      </div>
+
+      <input type="submit">
     </form>
   </div>
 
