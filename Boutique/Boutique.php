@@ -102,13 +102,35 @@ require('../Fonctions/Fonctions.php');
     </div>
     <div class="cartTab">
         <h1>Shopping Cart</h1>
-        <div class="listCart">
+        <?php
+        if(isset($_SESSION['Mail'])){
+            ?>
+            <div class="listCart">
 
-        </div>
-        <div class="btn">
-            <button class="close">CLOSE</button>
-            <button class="checkOut">Check Out</button>
-        </div>
+            </div>
+            <div class="btn">
+                <button class="close">CLOSE</button>
+                <button class="checkOut">Check Out</button>
+            </div>
+            <?php
+        }else {
+            ?>
+            <h3 class="notconnect"> You must be sign in </h3>
+            <div class="btn">
+                <button class="close">CLOSE</button>
+            </div>
+            <style>
+                .notconnect{
+                    text-align : center;
+                }
+                .close{
+                    grid-column: span 2;
+                }
+            </style>
+            <?php
+        }
+        ?>
+        
     </div>
 
     <script src="Boutique.js"></script>

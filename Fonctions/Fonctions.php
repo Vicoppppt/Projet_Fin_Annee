@@ -125,6 +125,3 @@ function Connexion() {
     }
   }
 }
-
-function IssetConnexion(){
-}
