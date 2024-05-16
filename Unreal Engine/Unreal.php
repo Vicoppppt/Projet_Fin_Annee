@@ -86,7 +86,9 @@ if (isset($_POST['Envoyer'])) {
   }
 }
 
-$counter = $_SESSION['Mail'];
+if (isset($_SESSION['Mail'])){
+  $counter = $_SESSION['Mail'];
+}
 
 ?>
 
@@ -94,7 +96,10 @@ $counter = $_SESSION['Mail'];
   window.onload = function() {
     window.scrollTo(0, 0);
   }
+
   var count = <?php echo json_encode($counter); ?>;
+
+
 
   document.addEventListener("DOMContentLoaded", function() {
     var timer;
@@ -127,17 +132,21 @@ $counter = $_SESSION['Mail'];
     }
 
     CartBtn.addEventListener('mouseleave', function() {
-      hideCart()
+      hideCart();
+    })
+
+    CartBtn.addEventListener('mouseenter', function() {
+      showCart();
     })
 
     loginBtn.addEventListener('mouseenter', function() {
       if (count != null) {
-        showMenu()
+        showMenu();
       }
     });
 
     loginBtn.addEventListener('mouseleave', function() {
-      hideMenu()
+      hideMenu();
     });
 
     bulle.addEventListener('mouseenter', function() {

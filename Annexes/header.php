@@ -42,7 +42,14 @@
             </i>';
             } else {
                 echo '<i class="ri-planet-line nav__search" id="search-btn">
-                <div class="bulleCart" id="bulleCart"></div>
+                <div class="bulleCart" id="bulleCart"><ul>
+                <a href="#">
+                    <li>Français</li>
+                </a>
+                <a href="../Fonctions/Deconnexion.php">
+                    <li>Anglais</li>
+                </a>
+            </ul></div>
             </i>';
 
             }
