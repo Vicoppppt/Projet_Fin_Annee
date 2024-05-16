@@ -70,7 +70,11 @@ include '../Navigation_Footer/Navigation.php';
 
 <?php
 Connexion();
-IssetConnexion();
+if(isset($_SESSION['Mail'])){
+   $counter = $_SESSION['Mail'];
+ } else {
+   $counter=null;
+ }
 ?>
 
 <script type="text/javascript">
