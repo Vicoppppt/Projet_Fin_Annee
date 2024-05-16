@@ -90,7 +90,7 @@ a {
     left: 0;
     top: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     z-index: var(--z-modal);
     background-color: hsla(230, 75%, 15%, .1);
     backdrop-filter: blur(24px);
@@ -449,7 +449,7 @@ a {
 }
 
 
-.Achats{
+.Achats {
     width: 500px;
     height: auto;
     background-color: gray;
@@ -459,7 +459,7 @@ a {
     overflow: scroll;
 }
 
-.Achats h1{
+.Achats h1 {
     padding: 3vh 5vh;
     background-color: orange;
     color: white;
