@@ -1,5 +1,6 @@
 <?php
 class Noeud {
+    public $id ; 
     public $valeur;
     public $etat;
     public $enfant_g;
@@ -8,6 +9,7 @@ class Noeud {
 
     public function __construct($valeur) {
         $this->valeur = $valeur;
+        $this ->$id = 0;
         $this->etat = rand(0, 1);
         $this->enfant_g = null;
         $this->enfant_d = null;
