@@ -42,7 +42,7 @@
     
     <body>
         <?php
-            include '../Annexes/header.php'
+            include '../Navigation_Footer/Navigation.php';
         ?>
 
         <div class="search" id="search">

@@ -23,7 +23,7 @@
                 }
 
                 if (basename($_SERVER['PHP_SELF']) !== 'Boutique.php') {
-                    echo '<li class="nav__item"><a href="../Boutique test/Boutique.php" class="nav__link">Boutique</a></li>';
+                    echo '<li class="nav__item"><a href="../Boutique/Boutique.php" class="nav__link">Boutique</a></li>';
                 }
                 ?>
             </ul>

@@ -21,7 +21,7 @@
 
 <?php
 require('../Fonctions/Fonctions.php');
-include '../Annexes/header.php';
+include '../Navigation_Footer/Navigation.php';
 ?>
 
 <!--==================== SEARCH ====================-->
@@ -69,7 +69,6 @@ include '../Annexes/header.php';
 </div>
 
 <?php
-session_start();
 Connexion();
 IssetConnexion();
 ?>
