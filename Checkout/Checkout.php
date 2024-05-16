@@ -148,9 +148,11 @@
     <h1>Payement</h1>
     <h5>Credit card only</h5>
 
-    <div class="formulaire">
-      
-    </div>
+    <form methood="post" class="formulaire">
+      <label id="left" class="CARD">Credit Card Infos</label>
+      <label id="right" class="ADRESS">Adress</label>
+      <input id="left" class="num" type="text" name="num"></input>
+    </form>
   </div>
 
 </body>

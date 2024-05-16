@@ -2,11 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 * {
-     box-sizing: border-box;
+    box-sizing: border-box;
     padding: 0;
-     margin: 0;
+    margin: 0;
     font-family: "Syne", sans-serif;
-
+    font-weight: bold;
+    unicode-bidi: isolate;
 }
 
 body {
@@ -51,7 +52,7 @@ body {
     100% { background-position: 0 0; }
 }
 
-h1 {
+h1, label {
     color: white;
 }
 
@@ -59,15 +60,70 @@ h5 {
     color: rgb(160, 160, 160);
 }
 
+label {
+    font-size: 30px;
+}
+
 .formulaire {
+    margin: 10px;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 10vh);
     grid-template-areas: "CARD ADRESS"
                          "num country"
                          "crypto city"
                          "date cp"
                          "name adress";
+    row-gap: 10px;
+    column-gap: 0px;
+}
+
+#left {
+    border-right: 1px solid white;
+}
+
+#right {
+    border-left: 1px solid white;
+}
+
+.CARD {
+    grid-area: CARD;
+}
+
+.ADRESS {
+    grid-area: ADRESS;
+}
+
+.num {
+    grid-area: num;
+}
+
+.country {
+    grid-area: country;
+}
+
+.crypto {
+    grid-area: crypto;
+}
+
+.city {
+    grid-area: city;
+}
+
+.date {
+    grid-area: date;
+}
+
+.cp {
+    grid-area: cp;
+}
+
+.name {
+    grid-area: name;
+}
+
+.adress {
+    grid-area: adress;
 }
 
 @media (max-width: 1045px) {
