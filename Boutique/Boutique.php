@@ -111,7 +111,7 @@ require('../Fonctions/Fonctions.php');
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="Boutique.js"></script>
 </body>
 
 </html>
